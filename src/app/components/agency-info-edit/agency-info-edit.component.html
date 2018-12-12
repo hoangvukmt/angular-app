@@ -1,0 +1,67 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="tutorial">
+    <div class="contents">
+        <div class="inner">
+            <div class="box-inner">
+                <section>
+                    <div class="tutorial-img">
+                        <img src="assets/img/tutorial03.png" />
+                    </div>
+                    <div class="tutorial-form">
+                        <div class="input-box">
+                            <input
+                                [formControl]="agentNameFormControl" 
+                                [ngClass]="{'input-error': agentNameFormControl.hasError('required') && (agentNameFormControl.dirty || agentNameFormControl.touched)}"
+                                class="user-name" 
+                                placeholder="{{'placeholderAgencyName' | translate}}" 
+                                type="text"
+                                maxlength="40" />
+                            <mat-error *ngIf="agentNameFormControl.hasError('required') && (agentNameFormControl.dirty || agentNameFormControl.touched)">
+                                {{'err_msg.agentNameRequired' | translate}}
+                            </mat-error>
+                        </div>
+                        <div class="input-box">
+                            <input [(ngModel)]="agentInfo.TantoName" class="user-name" placeholder="{{'placeholderPerson' | translate}}" type="text" maxlength="50" />
+                        </div>
+                        <div class="input-box">
+                            <input [(ngModel)]="agentInfo.Phone" class="user-name" placeholder="{{'placeholderPhone' | translate}}" type="text" onkeyup="forceNumberPhone(event, this, 20)" onfocus="addValueToNext(this)" />
+                            <input type="hidden" />
+                        </div>
+                        <div class="input-box">
+                            <input 
+                                [formControl]="keiyakuPageFormControl" 
+                                [ngClass]="{'input-error': keiyakuPageFormControl.hasError('ValidURL') && (keiyakuPageFormControl.dirty || keiyakuPageFormControl.touched)}"
+                                class="user-name" 
+                                placeholder="{{'placeholderPage' | translate}}" 
+                                type="text" maxlength="200" />
+                            <mat-error *ngIf="keiyakuPageFormControl.hasError('ValidURL') && (keiyakuPageFormControl.dirty || keiyakuPageFormControl.touched)">
+                                {{'err_msg.keiyakuPageInvalid' | translate}}
+                            </mat-error>
+                        </div>
+                        <div class="input-box">
+                            <input [(ngModel)]="agentInfo.Remarks" class="user-name" placeholder="{{'placeholderRemarks' | translate}}" type="text" maxlength="200" />
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="work-area work-area-setting">
+                        <button (click)="doBack()" class="circle-bt">
+                            <span class="return-bt"></span><span class="text-bt">{{'buttonReturn' | translate}}</span>
+                        </button>
+                        <div class="right-area">
+                            <button 
+                                [disabled]="agentNameFormControl.hasError('required') || keiyakuPageFormControl.hasError('ValidURL')" 
+                                [ngClass]="{'input-disable': agentNameFormControl.hasError('required') || keiyakuPageFormControl.hasError('ValidURL') }"
+                                (click)="doSave()" 
+                                class="circle-bt">
+                                <span class="done-bt"></span><span class="text-bt">{{'buttonDone' | translate}}</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <app-banner [bottomMargin]="true"></app-banner>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

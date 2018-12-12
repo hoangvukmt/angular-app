@@ -1,0 +1,11 @@
+{
+    "userNamePlaceholder": "ログインID（メールアドレス）",
+    "passwodPlaceholder": "パスワード",
+    "forgetPassword": "パスワードを忘れた方はこちら",
+    "buttonSubmit": "ログイン",
+    "version": "Version0.0.5",
+    "err_msg": {
+        "userNameRequired": "ログインID（メールアドレス）を入力してください",
+        "passwordRequired": "パスワードを入力してください"
+    }
+}

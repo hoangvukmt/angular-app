@@ -1,0 +1,10 @@
+{
+    "placeholder": "メールアドレス",
+    "textTitle": "ご入力いただいたメールアドレスに、新しいパスワードをお送り致します。",
+    "buttonSubmit": "再発行",
+    "buttonBack": "戻る",
+    "err_msg": {
+        "emailInvalid": "メールアドレスの形式で入力してください",
+        "emailRequire": "メールアドレスを入力してください"
+    }
+}

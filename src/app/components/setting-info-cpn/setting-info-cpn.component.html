@@ -1,0 +1,115 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="configuration">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <div class="text-content" *ngIf="id == 1">
+                    <h2>{{'titleId1' | translate}}</h2>
+                    <p class="text-data">
+                        1. 担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者
+                    </p>
+                    <p class="text-data">
+                        2. 担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者
+                    </p>
+                    <h2>{{'titleId1' | translate}}</h2>
+                    <p class="text-data">
+                        1. 担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者
+                    </p>
+                    <p class="text-data">
+                        2. 担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者
+                    </p>
+                </div>
+                <div class="text-content margin-top-10" *ngIf="id == 2">
+                    <p class="text-data">
+                        &nbsp;&nbsp;&nbsp;担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者
+                    </p>
+                    <h2>1. {{'titleId2' | translate}}</h2>
+                    <p class="text-data">
+                        &nbsp;&nbsp;&nbsp;担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者
+                    </p>
+                    <h2>2. {{'titleId2' | translate}}</h2>
+                    <p class="text-data">
+                        &nbsp;&nbsp;&nbsp;担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者担当者
+                    </p>
+                </div>
+                <div class="text-content margin-top-10" *ngIf="id == 3">
+                    <p class="text-data">{{'titleId3.content1' | translate}}</p>
+                    <p class="text-data margin-top-10">{{'titleId3.content2' | translate}}</p>
+                    <p class="text-data margin-top-10">{{'titleId3.content3' | translate}}</p>
+                </div>
+                <div *ngIf="id == 4">
+                    <table class="configuration-table input-table">
+                        <colgroup>
+                            <col width="90%">
+                            <col width="10%">
+                        </colgroup>
+                        <tr>
+                            <th colspan="2" class="configuration-title">{{'titleId4.title1' | translate}}</th>
+                        </tr>
+                        <tr>
+                            <td>{{'titleId4.title2' | translate}}</td>
+                            <td class="right">
+                                <span class="arrow"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="configuration-title">{{'titleId4.title1' | translate}}</th>
+                        </tr>
+                        <tr>
+                            <td>{{'titleId4.title2' | translate}}</td>
+                            <td class="right">
+                                <span class="arrow"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="configuration-title">{{'titleId4.title1' | translate}}</th>
+                        </tr>
+                        <tr>
+                            <td>{{'titleId4.title2' | translate}}</td>
+                            <td class="right">
+                                <span class="arrow"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{'titleId4.title2' | translate}}</td>
+                            <td class="right">
+                                <span class="arrow"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2" class="configuration-title">{{'titleId4.title1' | translate}}</th>
+                        </tr>
+                        <tr>
+                            <td>{{'titleId4.title2' | translate}}</td>
+                            <td class="right">
+                                <span class="arrow"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{'titleId4.title2' | translate}}</td>
+                            <td class="right">
+                                <span class="arrow"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>{{'titleId4.title2' | translate}}</td>
+                            <td class="right">
+                                <span class="arrow"></span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="text-content margin-top-25per" *ngIf="id == 5">
+                    <div class="img-banner text-center">
+                        <img class="banner" src="assets/img/login-img.png" />
+                    </div>
+                    <div class="text-center margin-top-10 margin-top-25per">
+                        version &nbsp;<span class="font-50">{{'version' | translate}}</span>
+                    </div>
+                </div>
+            </section>
+            <app-banner [bottomMargin]="true"></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

@@ -1,0 +1,10 @@
+.family-content{
+    max-height: 300px;
+    overflow: scroll;
+}
+@media only screen and (max-height: 415px){
+    .family-content{
+        max-height: 200px;
+        overflow: scroll;
+    }
+}

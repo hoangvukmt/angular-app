@@ -1,0 +1,106 @@
+#login section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#login .img-banner{
+    padding: 10px 20px;
+}
+#login img.banner{
+    min-width: 200px;
+}
+.login-form{
+    width: 100%;
+    margin-top: 5px;
+    text-align: center;
+    position: relative;
+}
+.login-form .input-box{
+    margin-bottom: 0;
+}
+.login-form input{
+    border-radius: 0;
+    width: 100%;
+    display: block;
+}
+.login-form input.user-name{
+    border-radius: 5px 5px 0 0;
+}
+.login-form input.pass-word{
+    border-radius: 0 0 5px 5px;
+}
+.login-form a{
+    margin-top: 25px;
+    display: block;
+    color: #3034de;
+}
+.login-footer{
+    width: 100%;
+}
+.login-footer .normal-bt{
+    width: 100%;
+    margin-top: 40px;
+}
+#login .box-inner{
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+.footer-version {
+    float: left;
+    width: 100%;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 479px){
+    #login .contents {
+        padding: 0;
+    }
+    #login .inner{
+        margin-top: 0;
+    }
+    .login-form a{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #login .contents {
+        padding: 0;
+    }
+    #login .inner{
+        margin-top: 0;
+    }
+    .login-form a{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #login .contents {
+        padding: 0;
+    }
+    #login .box-inner{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    #login .box-inner{
+        margin-top: 10px;
+    }
+    #login img.banner{
+        min-width: 350px;
+    }
+}
+
+@media only screen and (max-height: 415px){
+    #login .img-banner{
+        display: none;
+    }
+    #login .login-form{
+        margin-top: 0;
+    }
+}

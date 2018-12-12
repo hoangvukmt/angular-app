@@ -1,0 +1,57 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="message">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <table class="noborder-table input-table">
+                    <colgroup>
+                        <col width="20%">
+                        <col width="80%">
+                    </colgroup>
+                    <tr *ngFor="let item of lstMessage" class="tr-line-bottom">
+                        <td class="text-top-align">
+                            <img *ngIf="item.IconNumber === 0" class="border-circle" src="../../../assets/img/principal-icon.png" />
+                            <img *ngIf="item.IconNumber === 1" class="border-circle" src="../../../assets/img/operator.jpg" />
+                        </td>
+                        <td>
+                            <div class="message-time">
+                                {{item.CreateDateSub | date:'yyyy/MM/dd'}} {{item.TantoName}}
+                                <span *ngIf="item.collapse || item.lsImage.length > 0" class="float-right down-arrow" onclick="collapseMessage(this)"></span>
+                            </div>
+                            <div class="message-head">{{item.MessageTitle}}</div>
+                            <div class="collapse-placeholder">
+                                <div [innerHTML]="item.MessageSub"></div>
+
+                                <div *ngIf="item.MessageType === 1 && item.IconNumber === 1 && !item.collapse && !hiddenButton" class="message-footer text-center">
+                                    <button (click)="goAnalyzer()" class="normal-bt btn-analyzer bg-orange">{{'btnAnalyzer' | translate}}</button>
+                                </div>
+                                <div *ngIf="item.MessageType === 2 && item.IconNumber === 1 && item.ResultPath !== null && !item.collapse" class="message-footer text-center">
+                                    <button (click)="getFilePdf(item.ResultPath)" class="normal-bt btn-analyzer bg-green">{{'btn2' | translate}}</button>
+                                </div>
+                            </div>
+                            <div class="collapse">
+                                <div class="message-content" [innerHTML]="item.Message"></div>
+
+                                <div>
+                                    <div class="message-img" *ngFor="let img of item.lsImage; let i = index">
+                                        <div>
+                                            <img #imgs id="messageImg{{i}}" class="pointer" src="{{urlAPI}}api/getMessageImg?file_id={{img.FileID}}&token={{token}}&{{random}}" (click)="viewImage(img.FileID);" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div *ngIf="item.MessageType === 1 && item.IconNumber === 1 && !hiddenButton" class="message-footer text-center">
+                                    <button (click)="goAnalyzer()" class="normal-bt btn-analyzer bg-orange">{{'btnAnalyzer' | translate}}</button>
+                                </div>
+                                <div *ngIf="item.MessageType === 2 && item.IconNumber === 1 && item.ResultPath !== null" class="message-footer text-center">
+                                    <button (click)="getFilePdf(item.ResultPath)" class="normal-bt btn-analyzer bg-green">{{'btn2' | translate}}</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <app-banner></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

@@ -1,0 +1,106 @@
+#tutorial .tutorial-img{
+    margin-top: 50px;
+}
+#tutorial table tr.tr-line-bottom:first-child{
+    border-top: 1px solid #ccc !important;
+}
+#tutorial table tr td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+@media only screen and (max-width: 479px){
+    .work-area-setting{
+        bottom: 70px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #tutorial .box-inner{
+        width: 350px;
+        margin: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        box-shadow: 2px 2px 2px #ccc;
+    }
+    .work-area {
+        margin-top: 40px;
+        width: 300px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    #tutorial .box-inner{
+        width: 350px;
+        margin: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        box-shadow: 2px 2px 2px #ccc;
+    }
+    .work-area {
+        margin-top: 40px;
+        width: 300px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    #tutorial .box-inner{
+        width: 350px;
+        margin: auto;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        box-shadow: 2px 2px 2px #ccc;
+    }
+    .work-area {
+        margin-top: 40px;
+        width: 300px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 415px){
+    #tutorial table{
+        margin-bottom: 100px;
+    }
+    .work-area{
+        position: inherit;
+        width: 340px;
+        margin: 0;
+    }
+    .work-area-setting{
+        margin-bottom: 50px;
+    }
+}

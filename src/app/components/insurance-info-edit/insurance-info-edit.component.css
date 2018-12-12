@@ -1,0 +1,197 @@
+mat-select {
+    height: 32.39px;
+    display: block;
+}
+table tr td input {
+    height: 32.39px;
+}
+.span-name{
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    margin-right: 50px;
+}
+mat-select .mat-select-trigger {
+    margin-top: -5px;
+}
+.insurance-custom-date {
+    width: 34.1%;
+}
+input.mat-input-element {
+    font-size: 16px;
+}
+.mat-input-element:disabled {
+    background-color: #fff;
+    color: rgba(0,0,0,.87);
+}
+.configuration-table tr:hover{
+    background-color: transparent;
+}
+.work-area {
+    z-index: 9;
+}
+.input-table td {
+    position: relative;
+}
+.mat-error{
+    position: relative;
+}
+div.form-title {
+    border-bottom: 1px #ccc solid;
+    background-color: #EFEFEF;
+    padding: 15px 5px;
+    font-weight: bold;
+    color: #999;
+    display: flex;
+    align-items: center;
+}
+div.form-title > i {
+    cursor: pointer;
+}
+.div-tokuyaku:first-child {
+    margin-top: 30px;
+}
+div.form-add, div.form-row {
+    border-bottom: 1px #ccc solid;
+    padding: 15px 5px 15px 4px;
+    display: flex;
+    align-items: center;
+}
+div.form-add, div.row-title span {
+    cursor: pointer;
+}
+div.form-title .minus-icon, div.form-row .minus-icon {
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
+    cursor: pointer;
+    margin-bottom: 0;
+}
+
+div.form-row div.row-tool {
+    float: left;
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+div.form-row div.row-content {
+    float: left;
+    width: 90%;
+}
+div.form-row div.row-content div.row-title {
+    float: left;
+    /*
+    width: 50%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    */
+}
+div.form-row div.row-content div.row-value {
+    float: right;
+    /*
+    width: 50%;
+    cursor: pointer;
+    text-align: right;
+    margin-right: 15px;
+    */
+}
+div.form-row div.row-content div.row-value-left {
+    float: left;
+}
+div.form-row div.row-content div.row-comment {
+    float: left;
+    width: 100%;
+}
+div.form-add .red-circle-add {
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 479px){
+    #top .contents {
+        padding-top: 30px;
+    }
+    #top .inner{
+        margin-top: 0;
+    }
+    .insurance-custom-date {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #top .contents {
+        padding-top: 30px;
+    }
+    #top .inner{
+        margin-top: 0;
+    }
+    div.form-row div.row-tool {
+        width: 8%;
+    }
+    div.form-row div.row-content {
+        width: 92%;
+    }
+    div.form-row div.row-tool {
+        width: 10%;
+    }
+    div.form-row div.row-content {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #top .contents {
+        padding-top: 55px;
+    }
+    #top .inner{
+        margin-top: 0;
+    }
+    div.form-row div.row-tool {
+        width: 5%;
+    }
+    div.form-row div.row-content {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    div.form-row div.row-tool {
+        width: 5%;
+    }
+    div.form-row div.row-content {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    div.form-row div.row-tool {
+        width: 5%;
+    }
+    div.form-row div.row-content {
+        width: 95%;
+    }
+}
+
+@media only screen and (max-height: 415px){
+    
+}
+
+#configuration table td span{
+    display: block;
+    line-height: 20px;
+}
+
+.red-circle-add{
+    background-image: url("/assets/img/plus-w.png");
+    width: 20px;
+    height: 20px;
+    background-color: #30c357;
+    background-size: 15px;
+    display: inline-block;
+    margin-right: 5px;
+    border-radius: 50%;
+    background-position: center;
+    margin-bottom: -8px;
+    border: 5px solid #30c357
+}

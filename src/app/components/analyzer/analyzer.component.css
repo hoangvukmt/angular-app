@@ -1,0 +1,132 @@
+#analyzer table tr td{
+    border: 1px solid #eee;
+}
+#analyzer table tr td.no-border{
+    border: 0;
+}
+#analyzer table tr td.sub-head{
+    padding-left: 2px;
+    padding-right: 2px;
+    text-align: center;
+}
+#analyzer table tr td:first-child img{
+    max-width: 50%;
+    margin-bottom: 10px;
+}
+#analyzer table tr td:first-child span{
+    display: block;
+}
+#analyzer .bg-orange, #analyzer .bg-blue, #analyzer .bg-cyan, #analyzer .bg-lime{
+    color: #fff;
+    font-weight: bold;
+}
+#analyzer .bg-orange-fuzzy{
+    background-color: #f3a04a82;
+}
+#analyzer .bg-blue-fuzzy{
+    background-color: #2196f39e;
+}
+#analyzer .bg-cyan-fuzzy{
+    background-color: #1ddaf3bd;
+}
+#analyzer .bg-lime-fuzzy{
+    background-color: #cddc39a8;
+}
+#analyzer img.icon{
+    max-width: 20px !important;
+    margin-right: 10px;
+    margin-bottom: unset !important;
+}
+#analyzer .detail-content{
+    padding: 5px 10px 20px 10px;
+    line-height: 25px;
+}
+#analyzer .input-table tr:first-child{
+    border-top: 0 !important;
+}
+.alert-await {
+    position: fixed;
+    bottom: 50px;
+    color: #E94B3F;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    clear: both;
+}
+
+.table-panel {
+    overflow-x: auto;
+}
+
+.table-panel .input-table {
+    margin: auto;
+}
+
+@media only screen and (max-width: 347px){
+    #analyzer .contents{
+        padding-bottom: 50vmin !important;
+    }
+}
+
+@media only screen and (max-width: 479px){
+    #analyzer .contents{
+        padding-top: 10vmin;
+        padding-bottom: 26vmin;
+    }
+    #analyzer table tr td{
+        font-size: 12px;
+    }
+    #analyzer table tr td:first-child span{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #analyzer .contents{
+        padding-top: 10vmin;
+        padding-bottom: 26vmin;
+    }
+    #analyzer table tr td{
+        font-size: 12px;
+    }
+    #analyzer table tr td:first-child span{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #analyzer .contents{
+        padding-top: 50px;
+    }
+    #analyzer table tr td{
+        font-size: 12px;
+    }
+    #analyzer table tr td:first-child span{
+        font-size: 12px;
+    }
+    .alert-await {
+        position: static;
+        bottom: unset;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    .alert-await {
+        position: static;
+        bottom: unset;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    .alert-await {
+        position: static;
+        bottom: unset;
+    }
+}
+
+@media only screen and (max-height: 415px){
+    
+}

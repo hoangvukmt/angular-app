@@ -1,0 +1,36 @@
+<div class="no-padding remodal remodal-is-initialized remodal-is-opened">
+    <div class="popup-title custom-modal-title">家族選択</div>
+    <div class="popup-container">
+        <div class="family-content">
+            <table class="border-table">
+                <colgroup>
+                    <col width="20%">
+                    <col width="">
+                </colgroup>
+                <tr *ngFor='let person of listFamily; let i = index' (click)="setCurrentRelation(person)">
+                    <td class="center">
+                        <span class="family-select-img">
+                        <img *ngIf="person.Relation === 0 && sex==='1'" alt="" class="img" src="{{srcs.icon02}}">
+                        <img *ngIf="person.Relation === 0 && sex==='0'" alt="" class="img" src="{{srcs.icon0}}">
+                        <img *ngIf="person.Relation === 1" alt="" class="img" src="{{srcs.icon1}}">
+                        <img *ngIf="person.Relation === 2" alt="" class="img" src="{{srcs.icon2}}">
+                        <img *ngIf="person.Relation === 13" alt="" class="img" src="{{srcs.icon13}}">
+                        <img *ngIf="person.Relation === 14" alt="" class="img" src="{{srcs.icon14}}">
+                        <img *ngIf="person.Relation === 15" alt="" class="img" src="{{srcs.icon15}}">
+                        <img *ngIf="person.Relation === 16" alt="" class="img" src="{{srcs.icon16}}">
+                        <img *ngIf="person.Relation === 17" alt="" class="img" src="{{srcs.icon17}}">
+                        <img *ngIf="person.Relation === 18" alt="" class="img" src="{{srcs.icon18}}">
+                        <img *ngIf="person.Relation === 99" alt="" class="img" src="{{srcs.icon99}}">
+                    </span>
+                    </td>
+                    <td>
+                        <span class="family-select-title">{{person.LastName}} {{person.FirstName}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="popup-footer custom-modal-footer">
+            <button class="normal-bt gray" (click)="closeDialog()">閉じる</button>
+        </div>
+    </div>
+</div>

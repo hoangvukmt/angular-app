@@ -1,0 +1,51 @@
+<div id="forget-pass">
+    <div class="contents">
+        <div class="inner">
+            <div class="box-inner">
+                <section>
+                    <div class="img-banner">
+                        <img class="banner" src="assets/img/login-img.png" />
+                    </div>
+                    <div class="forget-pass-form">
+                        <div class="input-box">
+                            <input matInput 
+                                [formControl]="emailFormControl" 
+                                [ngClass]="{'input-error': (emailFormControl.hasError('email') || emailFormControl.hasError('required')) && (emailFormControl.dirty || emailFormControl.touched)}"
+                                (keyup)="clearErr()" 
+                                type="text" class="email" placeholder="{{'placeholder' | translate}}" maxlength="255" />
+                            <div *ngIf="requestResult.err && !(
+                                emailFormControl.hasError('required') && 
+                                emailFormControl.hasError('email') && 
+                                (emailFormControl.dirty || emailFormControl.touched)
+                            )" class="mat-error">
+                                {{requestResult.msg}}
+                            </div>
+                            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                {{'err_msg.emailInvalid' | translate}}
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required') && (emailFormControl.dirty || emailFormControl.touched)">
+                                {{'err_msg.emailRequire' | translate}}
+                            </mat-error>
+                        </div>
+                        <span>{{'textTitle' | translate}}</span>
+                    </div>
+                    <div class="forget-pass-footer">
+                        <button 
+                            [disabled]="emailFormControl.hasError('email') || emailFormControl.hasError('required')" 
+                            (click)="doForgetPass()"
+                            [ngClass]="{'input-disable': emailFormControl.hasError('required')}"
+                            class="normal-bt">{{'buttonSubmit' | translate}}</button>
+                    </div>
+                </section>
+                <section>
+                    <div class="work-area">
+                        <button  class="circle-bt" (click)="doBack()">
+                            <span class="return-bt"></span><span class="text-bt">{{'buttonBack' | translate}}</span>
+                        </button>
+                    </div>
+                </section>
+                <app-banner></app-banner>
+            </div>
+        </div>
+    </div>
+</div>

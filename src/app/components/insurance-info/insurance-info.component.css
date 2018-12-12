@@ -1,0 +1,133 @@
+.input-table td {
+    padding: 10px;
+}
+.input-table th {
+    height: 37px !important
+}
+.configuration-table tr:hover{
+    background-color: transparent;
+}
+.work-area {
+    z-index: 9;
+}
+.div-collapse > div {
+    float: left;
+    width: 100%;
+}
+.div-collapse > div:first-child {
+    margin-top: 8px;
+}
+.div-collapse > div > span:first-child {
+    min-width: 180px;
+    float: left;
+    text-align: right;
+    margin-right: 10px;
+}
+i.fas {
+    cursor: pointer;
+    float: right;
+    padding: 0px 10px;
+}
+
+.div-tokuyaku {
+    float: left;
+    width: 100%;
+}
+.div-tokuyaku:first-child {
+    margin-top: 30px;
+}
+.div-tokuyaku:last-child {
+    margin-bottom: 30px;
+}
+div.form-title {
+    border-bottom: 1px #ccc solid;
+    background-color: #EFEFEF;
+    padding: 15px 5px;
+    font-weight: bold;
+    color: #999;
+    display: flex;
+    align-items: center;
+    height: 55px;
+}
+div.form-title > i {
+    cursor: pointer;
+}
+div.form-row {
+    border-bottom: 1px #ccc solid;
+    padding: 15px 5px 15px 4px;
+    display: flex;
+    align-items: center;
+}
+div.form-row div.row-content {
+    float: left;
+    width: 100%;
+}
+div.form-row div.row-content div.row-title {
+    float: left;
+}
+div.form-row div.row-content div.row-value {
+    float: right;
+}
+div.form-row div.row-content div.row-value-left {
+    float: left;
+}
+div.form-row div.row-content div.row-comment {
+    float: left;
+    width: 100%;
+}
+
+@media only screen and (max-width: 479px){
+    #top .contents {
+        padding-top: 30px;
+    }
+    #top .inner{
+        margin-top: 0;
+    }
+    .div-collapse > div > span:first-child {
+        width: 100%;
+        text-align: left;
+    }
+    .div-collapse > div > span:nth-child(2) {
+        margin-left: 30px;
+    }
+    .col-toggle i.fas {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #top .contents {
+        padding-top: 30px;
+    }
+    #top .inner{
+        margin-top: 0;
+    }
+    .div-collapse > div > span:first-child {
+        width: 100%;
+        text-align: left;
+    }
+    .div-collapse > div > span:nth-child(2) {
+        margin-left: 30px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #top .contents {
+        padding-top: 55px;
+    }
+    #top .inner {
+        margin-top: 0;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+
+}
+
+@media only screen and (min-width: 1280px){
+
+}
+
+@media only screen and (max-height: 415px){
+    
+}

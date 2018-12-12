@@ -1,0 +1,15 @@
+{
+    "currentPassword": "現在のパスワード",
+    "newPassword": "新しいパスワード",
+    "confirmPassword": "確認用パスワード",
+    "buttonDone": "完了",
+    "buttonReturn": "戻る",
+    "err_msg": {
+        "oldPasswordRequired": "現在のパスワードを入力してください。",
+        "newPasswordRequired": "新しいパスワードを入力してください",
+        "lengthNewPassword": "パスワードは8文字以上入力してください。",
+        "characterOtherNewPassword": "パスワードに「,」「=」は使用できません。",
+        "notHaveNumberOrLatin": "パスワードは英字と数字を組み合わせてください。",
+        "confirmPasswordRequired": "確認用パスワードを必ず入力してください。"
+    }
+}

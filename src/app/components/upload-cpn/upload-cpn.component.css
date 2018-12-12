@@ -1,0 +1,23 @@
+
+@media only screen and (max-width: 824px){
+    #upload .contents {
+        padding: 0;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 769px){
+    
+}
+@media only screen and (min-width: 1024px){
+    
+}
+@media only screen and (max-height: 740px){
+    
+}
+@media only screen and (max-height: 415px){
+    .tutorial-title{
+        margin-bottom: 10px;
+    }
+    #upload .line-box {
+        padding: 10px;
+    }
+}

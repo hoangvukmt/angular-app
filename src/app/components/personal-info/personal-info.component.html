@@ -1,0 +1,135 @@
+<app-header-cpn *ngIf="!displayStep" [headerTitle]="headerTitle"></app-header-cpn>
+<div id="tutorial">
+    <div class="contents">
+        <div class="inner">
+            <div class="box-inner">
+                <section>
+                    <div class="tutorial-title" *ngIf="displayStep">
+                        {{'titleLine1' | translate}}<br>{{'titleLine2' | translate}}
+                    </div>
+                    <div class="tutorial-img" [ngClass]="{'margin-t-b-40':!displayStep}">
+                        <img *ngIf="isMale" src="assets/img/tutorial01.png" />
+                        <img *ngIf="!isMale" src="assets/img/woman.png" />
+                    </div>
+                    <div class="tutorial-form">
+                        <div class="input-box">
+                            <span class="input-title">{{'sex' | translate}}&nbsp;&nbsp;</span>
+                            <div class="input-element">
+                                <mat-select 
+                                    [formControl]="sexFormControl" 
+                                    (ngModelChange)="choseSex()"
+                                    placeholder="{{'sexTitle.nullValue' | translate}}">
+                                    <mat-option *ngFor="let item of lsSex" value="{{item.selNo}}">{{item.name}}</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <!--
+                        <div class="input-box button-tool">
+                            <span class="input-title">{{'sex' | translate}}</span>
+                            <button [ngClass]="{'active': isMale}" (click)="choseSex(true)" class="normal-bt btn-sex">{{'male' | translate}}</button>
+                            <button [ngClass]="{'active': !isMale}" (click)="choseSex(false)" class="normal-bt btn-sex">{{'female' | translate}}</button>
+                        </div>
+                        -->
+                        <div class="input-box">
+                            <span class="input-title">{{'datePlaceholder' | translate}}&nbsp;&nbsp;</span>
+                            <div class="input-element custom-date" (click)="picker.open()">
+                                <input matInput
+                                    [matDatepicker]="picker"
+                                    [formControl]="birthdayFormControl"
+                                    (dateChange)="dateChange()"
+                                    [ngClass]="{'input-error': (birthdayFormControl.hasError('required') || errDate) && (birthdayFormControl.dirty || birthdayFormControl.touched)}"
+                                    onkeyup="onlyYYYYmmdd(this)" />
+                                <mat-datepicker-toggle matSuffix [for]="picker" (click)="openDate()"></mat-datepicker-toggle>
+                                <mat-datepicker #picker disabled="false" (closed)="closedDate()" [startAt]="startAt"></mat-datepicker>
+                            </div>
+                            <mat-error *ngIf="birthdayNull">
+                                {{'err_msg.birthdayRequired' | translate}}
+                            </mat-error>
+                            <mat-error *ngIf="errDate">
+                                {{'err_msg.birthdayGreater' | translate}}
+                            </mat-error>
+                        </div> 
+                        <div class="input-box">
+                            <div class="input-group">
+                                <span class="input-title">{{'fullName' | translate}}&nbsp;&nbsp;</span>
+                                <div class="input-element">
+                                    <input [formControl]="lastNameFormControl" 
+                                        (keyup)="clearErr()" 
+                                        [ngClass]="{'input-error': lastNameFormControl.hasError('required') && (lastNameFormControl.dirty || lastNameFormControl.touched)}"
+                                        class="input-50" placeholder="{{'firstNamePlaceholder' | translate}}" type="text" maxlength="100" />
+                                    <input [formControl]="firstNameFormControl" 
+                                        (keyup)="clearErr()" 
+                                        [ngClass]="{'input-error': firstNameFormControl.hasError('required') && (firstNameFormControl.dirty || firstNameFormControl.touched)}"
+                                        class="input-50" placeholder="{{'lastNamePlaceholder' | translate}}" type="text" maxlength="100" />
+                                </div>
+                                
+                            </div>
+                            <mat-error *ngIf="
+                                firstNameFormControl.hasError('required') && 
+                                lastNameFormControl.hasError('required') && 
+                                (firstNameFormControl.dirty || firstNameFormControl.touched || lastNameFormControl.dirty || lastNameFormControl.touched)">
+                                {{'err_msg.fullNameRequired' | translate}}
+                            </mat-error>
+                            <mat-error *ngIf="
+                                lastNameFormControl.hasError('required') && 
+                                !firstNameFormControl.hasError('required') && 
+                                (lastNameFormControl.dirty || lastNameFormControl.touched)">
+                                {{'err_msg.firstNameRequired' | translate}}
+                            </mat-error>
+                            <mat-error *ngIf="firstNameFormControl.hasError('required') && 
+                                !lastNameFormControl.hasError('required') && 
+                                (firstNameFormControl.dirty || firstNameFormControl.touched)">
+                                {{'err_msg.lastNameRequired' | translate}}
+                            </mat-error>
+                            <div *ngIf="requestResult.err" class="mat-error">
+                                {{requestResult.msg}}
+                            </div>
+                        </div>
+                        <div *ngIf="displayStep">
+                            <button (click)="doSave(false)"
+                                [disabled]="birthdayFormControl.hasError('required') || errDate || isErr || firstNameFormControl.hasError('required') || lastNameFormControl.hasError('required')" 
+                                [ngClass]="{'input-disable': birthdayFormControl.hasError('required') || errDate || isErr || firstNameFormControl.hasError('required') || lastNameFormControl.hasError('required')}"
+                                class="plus-bt">
+                                <span class="plus-img"></span>
+                                <span class="plus-bt-text">{{'buttonAddFamily' | translate}}</span>
+                            </button>
+                        </div> 
+                    </div>
+                    <div *ngIf="displayStep" class="tutorial-footer">
+                        <div class="input-box">
+                            <button (click)="doSave(true)"
+                                [disabled]="birthdayFormControl.hasError('required') || errDate || isErr || firstNameFormControl.hasError('required') || lastNameFormControl.hasError('required')" 
+                                [ngClass]="{'input-disable': birthdayFormControl.hasError('required') || errDate || isErr || firstNameFormControl.hasError('required') || lastNameFormControl.hasError('required')}"
+                            class="normal-bt next-bt">{{'buttonSave' | translate}}</button>
+                        </div>
+                    </div>
+                </section>
+                <section *ngIf="displayStep">
+                    <div class="work-area">
+                        <button (click)="doBack('login')" class="circle-bt">
+                            <span class="return-bt"></span><span class="text-bt">{{'buttonBack' | translate}}</span>
+                        </button>
+                    </div>
+                </section>
+                <section *ngIf="!displayStep">
+                    <div class="work-area work-area-setting">
+                        <button (click)="doBack('family')" class="circle-bt">
+                            <span class="return-bt"></span><span class="text-bt">{{'buttonBack' | translate}}</span>
+                        </button>
+                        <div class="right-area">
+                            <button 
+                                (click)="doUpdate()" 
+                                [disabled]="birthdayFormControl.hasError('required') || errDate || isErr || firstNameFormControl.hasError('required') || lastNameFormControl.hasError('required')" 
+                                [ngClass]="{'input-disable': birthdayFormControl.hasError('required') || errDate || isErr || firstNameFormControl.hasError('required') || lastNameFormControl.hasError('required')}"
+                                class="circle-bt">
+                                <span class="done-bt"></span><span class="text-bt">{{'buttonDone' | translate}}</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+                <app-banner [bottomMargin]="!displayStep"></app-banner>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer-cpn *ngIf="!displayStep"></app-footer-cpn>

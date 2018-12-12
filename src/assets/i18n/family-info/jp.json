@@ -1,0 +1,42 @@
+{
+    "titleLine1": "ご家族がいる場合は、",
+    "titleLine2": "家族情報を入力してください",
+    "sex": "性別",
+    "male": "男性",
+    "female": "女性",
+    "fullName": "お名前",
+    "datePlaceholder": "生年月日",
+    "firstNamePlaceholder": "姓",
+    "lastNamePlaceholder": "名",
+    "buttonAddFamily": "家族を追加する",
+    "buttonSave": "次へ",
+    "buttonBack": "戻る",
+    "buttonDone": "完了",
+    "titleUse": "家族",
+    "btnAddNewFamily": "追加",
+    "err_msg": {
+        "relationRequired": "関係を入力してください",
+        "birthdayRequired": "お誕生日を入力してください",
+        "birthdayGreater": "生年月日は現在日より未来日を入力できません。",
+        "firstNameRequired": "苗字を入力してください",
+        "lastNameRequired": "名前を入力してください",
+        "fullNameRequired": "苗字と名前を入力してください"
+    },
+    "relationTitle": {
+        "nullValue": "続柄",
+        "husband": "夫",
+        "wife": "妻",
+        "children": "子供",
+        "father": "父",
+        "mother": "母",
+        "grandchildren": "孫",
+        "grandFather": "祖父",
+        "grandMother": "祖母",
+        "other": "その他",
+        "me": "本人",
+        "relationMe": "本人の"
+    },
+    "sexTitle": {
+        "nullValue": "性別"
+    }
+}

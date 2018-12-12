@@ -1,0 +1,15 @@
+td.hasError {
+    position: relative;
+    padding-bottom: 15px;
+}
+td.hasError input {
+    display: block;
+}
+td.hasError mat-error{
+    margin-left: 10px;
+}
+.mat-error{
+    position: unset;
+    float: left;
+    margin: 0 !important;
+}

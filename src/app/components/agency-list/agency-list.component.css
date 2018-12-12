@@ -1,0 +1,11 @@
+#configuration table tr td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+table tr td span.red-circle-add{
+    display: inline-block;
+    border: 5px solid #30c357;
+}
+.work-area {
+    z-index: 9;
+}

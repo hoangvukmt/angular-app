@@ -1,0 +1,122 @@
+<header class="header" role="banner">
+    <div class="inner">
+        <div id="logo" (click)="goToHome()">
+            <img src="assets/img/logo.png">
+        </div>
+        <div class="right" style="width: 100%;">
+            <div class="contact-box">
+                <!-- <button class="contact-bt">
+                    <span class="app-contact-icons"></span>
+                    <span>アプリに関する<br>お問い合わせ</span>
+                </button> -->
+                <button (click)="goUrl('message', false)" class="contact-bt">
+                    <span class="insurance-contact-icons"></span>
+                    <span style="margin:auto">お問い合わせ</span>
+                </button>
+                <button (click)="goUrl('logout', false)" class="sub-menu-bt"><span class="logoff"></span></button>
+            </div>
+            <div class="sub-menu-custom">
+                <span class="name">{{name}}</span> 
+                <button (click)="goUrl('personal', false)" class="sub-menu-bt-2">
+                    <span class="identity-setting"
+                    [class.icon0]="sex==='0'" 
+                    [class.icon2]="sex==='1'"></span>
+                    <span class="bt-text">ご本人設定</span>
+                </button>
+                <button (click)="goUrl('family', false)" class="sub-menu-bt-2">
+                    <span class="add-family"></span>
+                    <span class="bt-text">家族追加</span>
+                </button>
+                <button (click)="goUrl('agency', false)" class="sub-menu-bt-2">
+                    <span class="add-agency"></span>
+                    <span class="bt-text">代理店設定</span>
+                </button>
+                <button (click)="goUrl('change-pass', false)" class="sub-menu-bt-2">
+                    <span class="change-pass-2"></span>
+                    <span class="bt-text">パスワード変更</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="title">{{headerTitle}}</div>
+    <mat-drawer-container autosize>
+        <mat-drawer #drawer mode="side" class="mobile-menu">
+            <div class="nav-content">
+                <div class="nav-scroll">
+                    <span class="close-menu-bar" (click)="drawer.toggle();"></span>
+                    <div class="principal-box">
+                        <div 
+                        [class.icon100]="currentRelation===0 && sex==='1'"
+                        [class.icon0]="currentRelation===0 && sex==='0'"
+                        [class.icon1]="currentRelation===1" 
+                        [class.icon2]="currentRelation===2"
+                        [class.icon13]="currentRelation===13" 
+                        [class.icon14]="currentRelation===14" 
+                        [class.icon15]="currentRelation===15" 
+                        [class.icon16]="currentRelation===16" 
+                        [class.icon17]="currentRelation===17" 
+                        [class.icon18]="currentRelation===18" 
+                        [class.icon99]="currentRelation===99" 
+                        class="principal-icon"
+                        ></div>
+                        <div  class="name">{{name}}</div>
+                    </div>
+                    <button (click)="goUrl('family', true)" class="sub-menu-bt">
+                        <span class="add-family"></span>
+                        <span class="bt-text">家族設定</span>
+                    </button>
+                    <button (click)="goUrl('agency', true)" class="sub-menu-bt">
+                        <span class="add-agency"></span>
+                        <span class="bt-text">保険代理店</span>
+                    </button>
+                    <button (click)="goUrl('message', true)" class="sub-menu-bt">
+                        <span class="inbox"></span>
+                        <span class="bt-text">お問合せ</span>
+                    </button>
+                    <button (click)="goUrl('change-pass', true)" class="sub-menu-bt">
+                        <span class="change-pass"></span>
+                        <span class="bt-text">パスワード変更</span>
+                    </button>
+                    <button (click)="goUrl('setting', true)" class="sub-menu-bt">
+                        <span class="setting"></span>
+                        <span class="bt-text">アプリについて</span>
+                    </button>
+                    <button (click)="goUrl('logout', true)" class="sub-menu-bt">
+                        <span class="logoff"></span>
+                        <span class="bt-text">ログアウト</span>
+                    </button>
+                    <div class="contact-box">
+                        <button *ngIf="!hiddenButton1"
+                            (click)="doAnalyze()"
+                            class="normal-bt btn-analyzer">お試し証券分析</button>
+                        <button *ngIf="hiddenButton1 && showButton2"
+                            (click)="doOrder()"
+                            class="normal-bt btn-analyzer">相談予約</button>
+                    </div>
+                </div>
+            </div>
+        </mat-drawer>
+    </mat-drawer-container>
+    <button class="drawer-toggle btn-toggle-menu" (click)="drawer.toggle(); checkRelation();" type="button" onclick="setHeightSideBar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="nav-fix-pos" id="menu-box">
+        <nav id="menubar">
+            <button (click)="goUrl('home', false)" [class.active]="this.isHomePage">
+                <span class="menu-icons01"></span>
+                <span>ホーム</span>
+            </button>
+            <button (click)="goUrl('analyzer', false)" [class.active]="this.isAnalyzerPage">
+                <span class="menu-icons06"></span>
+                <span>簡易診断</span>
+            </button>
+            <button (click)="goUrl('message-list', false)" [class.active]="this.isMessage">
+                <span class="lb-count" *ngIf="countMessage > 0">{{countMessage}}</span>
+                <span class="menu-icons04"></span>
+                <span>お知らせ</span>
+            </button>
+        </nav>
+    </div>
+</header>

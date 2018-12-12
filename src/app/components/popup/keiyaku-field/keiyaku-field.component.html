@@ -1,0 +1,161 @@
+<!--Full text-->
+<div *ngIf="fieldDisplay.type === 0">
+    <input 
+        [formControl]="formModel" 
+        [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+        type="text" 
+        autocomplete="off" />
+</div>
+<!--Half size-->
+<div *ngIf="fieldDisplay.type === 1">
+    <input 
+        [formControl]="formModel" 
+        [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+        type="text" 
+        maxlength="30" 
+        class="half-size halfSize{{fieldDisplay.name}}" 
+        autocomplete="off" />
+</div>
+<!--Number half size-->
+<div *ngIf="fieldDisplay.type === 2">
+    <input 
+        [formControl]="formModel" 
+        [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+        type="text" 
+        class="number-half-size numberHalfSize{{fieldDisplay.name}}" 
+        autocomplete="off" />
+</div>
+<!--Number half size-->
+<div *ngIf="fieldDisplay.type === 3">
+    <input 
+        [formControl]="formModel" 
+        [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+        id="{{fieldDisplay.name}}Phone"
+        type="text" 
+        onkeyup="forceNumberPhone(event, this, 20)" 
+        onfocus="addValueToNext(this)"
+        autocomplete="off" />
+    <input type="hidden" />
+</div>
+<!--Money-->
+<div *ngIf="fieldDisplay.type === 10">
+    <div class="col-70">
+        <input 
+            [formControl]="formModel"
+            (focus)="convertToNumber()" 
+            (blur)="convertToMoney()"
+            [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+            type="text" 
+            id="moneyOf{{fieldDisplay.name}}" 
+            style="text-align: right;" 
+            onkeyup="forceNumber(event, this, 12)"  />
+        <input type="hidden" [(ngModel)]="moneyNumber" />
+    </div>
+    <div class="col-30 label-text">
+        {{keiyakuDetail.foreign_f_name}}
+    </div>
+</div>
+<!--Money-->
+<div *ngIf="fieldDisplay.type === 100" class="div-colum">
+    <div class="col-70">
+        <input 
+            [formControl]="formModel"
+            (focus)="convertToNumber()" 
+            (blur)="convertToCurrency()"
+            [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+            type="text" 
+            id="moneyOf{{fieldDisplay.name}}" 
+            style="text-align: right;" 
+            onkeyup="forceNumber(event, this, 12)"  />
+        <input type="hidden" [(ngModel)]="moneyNumber" />
+    </div>
+    <div class="col-30">
+        <mat-select 
+            [formControl]="secondModel"
+            [ngClass]="{'input-error': fieldDisplay.required === 1 && secondModel.hasError('required') && (secondModel.dirty || secondModel.touched)}">
+            <mat-option value=""></mat-option>
+            <mat-option *ngFor="let item of fieldDisplay.listData" value="{{item.selNo}}">{{item.name}}</mat-option>
+        </mat-select>
+    </div>
+</div>
+<!--Dropdown-->
+<div *ngIf="fieldDisplay.type === 20">
+    <mat-select 
+        [formControl]="formModel"
+        [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+        (ngModelChange)="doEventOut()">
+        <mat-option value=""></mat-option>
+        <mat-option *ngFor="let item of fieldDisplay.listData" value="{{item.selNo}}">{{item.name}}</mat-option>
+    </mat-select>
+</div>
+<!--Datetime-->
+<div *ngIf="fieldDisplay.type === 30">
+    <div class="insurance-custom-date" [ngClass]="{'full-date': fieldDisplay.name === 'Hosho'}">
+        <input matInput
+            [matDatepicker]="datePicker" 
+            [formControl]="formModel"
+            [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+            placeholder="{{fieldDisplay.text}}">
+        <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+        <mat-datepicker #datePicker disabled="false"></mat-datepicker>
+    </div>
+</div>
+<!--Family or Hihofamily-->
+<div *ngIf="fieldDisplay.type === 40">
+    <input type="text" matInput [formControl]="formModel" [matAutocomplete]="auto">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+        <mat-option *ngFor="let item of fieldDisplay.listData" [value]="item">{{item.title}}</mat-option>
+    </mat-autocomplete>
+</div>
+<!--Company-->
+<div *ngIf="fieldDisplay.type === 50" (click)="doEventOut()" class="div-cursor">
+    {{keiyakuDetail.company_name}} <i class="fas fa-caret-down"></i>
+</div>
+<!--Product-->
+<div *ngIf="fieldDisplay.type === 60" (click)="doEventOut()" class="div-cursor">
+    {{keiyakuDetail.product_name}} <i class="fas fa-caret-down"></i>
+</div>
+<!--Agent-->
+<div *ngIf="fieldDisplay.type === 70" (click)="doEventOut()" class="div-cursor">
+    {{keiyakuDetail.agent_name}}
+</div>
+<!--Hkinkan Pkikan-->
+<div *ngIf="fieldDisplay.type === 80" class="div-colum">
+    <div class="col-30">
+        <input type="number" 
+            [formControl]="formModel"
+            [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}"
+            onkeyup="forceNumber(event, this, 2)" 
+            onfocus="addValueToNext(this)" />
+        <input type="hidden" />
+    </div>
+    <div class="col-70">
+        <mat-select 
+            [formControl]="secondModel" 
+            (ngModelChange)="doEventOut()"
+            [ngClass]="{'input-error': fieldDisplay.required === 1 && secondModel.hasError('required') && (secondModel.dirty || secondModel.touched)}">
+            <mat-option value=""></mat-option>
+            <mat-option *ngFor="let item of fieldDisplay.listData" [value]="item.selNo">{{item.name}}</mat-option>
+        </mat-select>
+    </div>
+</div>
+<!--Category-->
+<div *ngIf="fieldDisplay.type === 90">
+    <mat-select 
+        [formControl]="formModel" 
+        (ngModelChange)="doEventOut()"
+        [ngClass]="{'input-error': fieldDisplay.required === 1 && formModel.hasError('required') && (formModel.dirty || formModel.touched)}">
+        <mat-option *ngFor="let item of fieldDisplay.listData" value="{{item.selNo}}">{{item.name}}</mat-option>
+    </mat-select>
+</div>
+<!--
+<mat-select 
+    [formControl]="familyNoFormControl"
+    [ngClass]="{'input-error': fieldOfKeiyaku.FamilyNo.required === 1 && familyNoFormControl.hasError('required') && (familyNoFormControl.dirty || familyNoFormControl.touched)}">
+    <mat-option value=""></mat-option>
+    <mat-option *ngFor="let familyNo of listFamily" [value]="familyNo.id">{{familyNo.title}}</mat-option>
+</mat-select>
+<mat-error *ngIf="fieldOfKeiyaku.FamilyNo.required === 1 && familyNoFormControl.hasError('required') && (familyNoFormControl.dirty || familyNoFormControl.touched)">
+    {{'err_msg.familyNoRequired' | translate}}
+</mat-error>
+-->

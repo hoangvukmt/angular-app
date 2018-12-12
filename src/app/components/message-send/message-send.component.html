@@ -1,0 +1,72 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="message">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <table class="noborder-table input-table">
+                    <colgroup>
+                        <col width="15%">
+                        <col width="65%">
+                        <col width="20%">
+                    </colgroup>
+                    <tr class="tr-line-bottom">
+                        <th class="list-title">
+                            {{'from' | translate}}:
+                        </th>
+                        <td>
+                            {{'fromText' | translate}}
+                        </td>
+                        <td rowspan="2" class="text-center">
+                            <img class="border-circle" src="../../../assets/img/principal-icon.png" />
+                        </td>
+                    </tr>
+                    <tr class="tr-line-bottom">
+                        <th class="list-title">
+                            {{'titleSendMessage' | translate}}:
+                        </th>
+                        <td class="td-title">
+                            <input
+                                [formControl]="titleFormControl"
+                                [ngClass]="{'input-error': titleFormControl.hasError('required') && (titleFormControl.dirty || titleFormControl.touched)}"
+                                class="message-title" tabindex="" type="text" />
+                            <mat-error *ngIf="titleFormControl.hasError('required') && (titleFormControl.dirty || titleFormControl.touched)">
+                                {{'err_msg.titleRequired' | translate}}
+                            </mat-error>
+                        </td>
+                    </tr>
+                    <tr class="">
+                        <td colspan="3">
+                            <textarea
+                                [formControl]="messageFormControl"
+                                rows="23"
+                                class="txt-area"></textarea>
+                            <!--
+                            <mat-error *ngIf="messageFormControl.hasError('required') && (messageFormControl.dirty || messageFormControl.touched)">
+                                {{'err_msg.messageRequired' | translate}}
+                            </mat-error>
+                            -->
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <div class="work-area">
+                    <button (click)="doBack()" class="circle-bt">
+                        <span class="return-bt"></span><span class="text-bt">{{'buttonBack' | translate}}</span>
+                    </button>
+                    <div class="right-area">
+                        <button
+                            (click)="doSave()"
+                            [disabled]="titleFormControl.hasError('required')" 
+                            [ngClass]="{'input-disable': titleFormControl.hasError('required')}"
+                            class="circle-bt bg-green">
+                            <span class="add-bt upload-bt"></span><span class="text-bt">{{'btnSend' | translate}}</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <app-banner [bottomMargin]="true"></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

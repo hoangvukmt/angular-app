@@ -1,0 +1,51 @@
+<app-header-cpn></app-header-cpn>
+<div id="configuration">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <table class="configuration-table input-table">
+                    <colgroup>
+                        <col width="30%">
+                        <col width="60%">
+                        <col width="10%">
+                    </colgroup>
+                    <tr>
+                        <th colspan="3" class="configuration-title" style="text-align: center">代理店情報</th>
+                    </tr>
+                    <tr>
+                        <td>代理店名</td>
+                        <td colspan="2" *ngIf="detailAgent">
+                            {{detailAgent.AgentName}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>担当者</td>
+                        <td colspan="2" *ngIf="detailAgent">
+                            {{detailAgent.TantoName}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>連絡先(電話)</td>
+                        <td colspan="2" *ngIf="detailAgent">
+                            {{detailAgent.Phone}}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ご契約者ページ(URL)</td>
+                        <td colspan="2" *ngIf="detailAgent">
+                            {{detailAgent.KeiyakuPage}}
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <div class="work-area">
+                    <button class="circle-bt" (click)="doBack()">
+                        <span class="return-bt"></span><span class="text-bt">{{'btn' | translate}}</span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

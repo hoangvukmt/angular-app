@@ -1,0 +1,20 @@
+{
+    "title1": "代理店名",
+    "title2": "担当者",
+    "title3": "連絡先(電話)",
+    "title4": "ご契約者ページ(URL)",
+    "buttonCancel": "キャンセル",
+    "buttonEdit": "編集",
+    "placeholderAgencyName":"代理店名",
+    "placeholderPerson":"担当者",
+    "placeholderPhone":"連絡先(電話番号)",
+    "placeholderPage":"ご契約者ページ(URL)",
+    "placeholderRemarks": "メモ",
+    "buttonReturn": "戻る",
+    "buttonDone": "完了",
+    "buttonAddNew": "追加",
+    "err_msg": {
+        "agentNameRequired": "代理店名を入力してください",
+        "keiyakuPageInvalid": "URLの形式で入力してください。"
+    }
+}

@@ -1,0 +1,33 @@
+.icon-heart{
+    background-image: url("../../../assets/img/life.png");
+}
+.icon-medical{
+    background-image: url("../../../assets/img/medical.png");
+}
+.icon-fig{
+    background-image: url("../../../assets/img/savings.png");
+}
+.icon-car{
+    background-image: url("../../../assets/img/car.png");
+}
+.ison-house{
+    background-image: url("../../../assets/img/house.png");
+}
+.icon-sun{
+    background-image: url("../../../assets/img/sun.png");
+}
+.icon-travel{
+    background-image: url("../../../assets/img/airplane.png");
+}
+.icon-other{
+    background-image: url("../../../assets/img/other.png");
+}
+.work-area{
+    position: unset;
+    margin-top: 30px;
+}
+@media only screen and (max-height: 415px){
+    .work-area{
+        margin-top: 10px;
+    }
+}

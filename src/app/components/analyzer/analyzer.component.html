@@ -1,0 +1,197 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="analyzer">
+    <div class="contents">
+        <div class="inner">
+            <div class="tool-panel">
+                <div class="input-group text-center">
+                    <button class="normal-bt btn-active" (click)="tabClick(false)" [ngClass]="{'btn-no-active': showDetail}">{{'leftSwitchButton' | translate}}</button>
+                    <button class="normal-bt btn-active" (click)="tabClick(true)" [ngClass]="{'btn-no-active': !showDetail}">{{'rightSwitchButton' | translate}}</button>
+                </div>
+            </div>
+            <section [hidden]="showDetail">
+                <div *ngIf="showAlert" class="alert-await">
+                    {{'alerAwait' | translate}}
+                </div>
+                <div class="relative">
+                    <div class="table-panel">
+                        <table id="analyzerTbl" class="input-table">
+                            <tr>
+                                <td class="fix-1 no-border"></td>
+                                <td class="fix-1 no-border"></td>
+                                <td class="item-data sub-head" *ngFor="let item of dataResult">{{item.FirstName}}</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="fix-1 bg-orange">
+                                    <img src="../../../assets/img/life.png" class="icon" />{{'headlthGroup.title' | translate}}
+                                </td>
+                                <td class="item-data bg-orange-fuzzy" *ngFor="let item of dataResult">&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3" class="fix-1 td-category text-center">
+                                    <img src="../../../assets/img/life.png" />
+                                    <span>{{'headlthGroup.group1.title' | translate}}</span>
+                                </td>
+                                <td class="fix-2 td-category-item">{{'headlthGroup.group1.items.item1' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.IsshogaiHoshoF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">{{'headlthGroup.group1.items.item2' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.ItteiKikanHoshoF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">{{'headlthGroup.group1.items.item3' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.FamilyShunyuF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="5" class="fix-1 text-center">
+                                    <img src="../../../assets/img/medical.png" />
+                                    <span>{{'headlthGroup.group2.title' | translate}}</span>
+                                </td>
+                                <td class="fix-2">{{'headlthGroup.group2.items.item1' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.SickF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">{{'headlthGroup.group2.items.item2' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.GanF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">{{'headlthGroup.group2.items.item3' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.ShippeiF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">{{'headlthGroup.group2.items.item4' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.ShugyoFunoF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">{{'headlthGroup.group2.items.item5' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.KaigoF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2" class="fix-1 text-center">
+                                    <img src="../../../assets/img/savings.png" />
+                                    <span>{{'headlthGroup.group3.title' | translate}}</span>
+                                </td>
+                                <td class="fix-2">{{'headlthGroup.group3.items.item1' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.EducationFundF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">
+                                    <span>{{'headlthGroup.group3.items.item2' | translate}}</span>
+                                </td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.RogoF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-1">
+                                    <span><img src="../../../assets/img/medical.png" class="icon" />{{'headlthGroup.group4.title' | translate}}</span>
+                                   
+                                </td>
+                                <td class="fix-2">{{'headlthGroup.group4.items.item1' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.KegaF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="fix-1 bg-blue">
+                                    <img src="../../../assets/img/car.png" class="icon" />{{'carGroup.title' | translate}}
+                                </td>
+                                <td class="item-data" *ngFor="let item of dataResult" class="bg-blue-fuzzy"></td>
+                            </tr>
+                            <tr>
+                                <td class="fix-1">
+                                    <span>{{'carGroup.group1.title' | translate}}</span>
+                                </td>
+                                <td class="fix-2">{{'carGroup.group1.items.item1' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.CarF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-1">
+                                    <span>{{'carGroup.group2.title' | translate}}</span>
+                                </td>
+                                <td class="fix-2">{{'carGroup.group2.items.item1' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.BicycleF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="fix-1 bg-cyan">
+                                    <img src="../../../assets/img/house.png" class="icon" />{{'houseGroup.title' | translate}}
+                                </td>
+                                <td class="item-data" *ngFor="let item of dataResult" class="bg-cyan-fuzzy"></td>
+                            </tr>
+                            <tr>
+                                <td class="fix-1" rowspan="2">
+                                    <span>{{'houseGroup.group1.title' | translate}}</span>
+                                </td>
+                                <td class="fix-2">{{'houseGroup.group1.items.item1' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.KasaiF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">{{'houseGroup.group1.items.item2' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.JishinF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-1" rowspan="2">
+                                    <span>{{'houseGroup.group2.title' | translate}}</span>
+                                </td>
+                                <td class="fix-2">{{'houseGroup.group2.items.item1' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.LiabilityF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="fix-2">{{'houseGroup.group2.items.item2' | translate}}</td>
+                                <td class="item-data" *ngFor="let item of dataResult">
+                                    <span *ngIf="item.PetF === 1" [ngClass]="{'red-circle-icon': !showAlert, 'grey-circle-icon': showAlert}"></span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <section [hidden]="!showDetail">
+                <div class="detail-content text-justify" [innerHTML]="htmlMessage"></div>
+                <div class="detail-banner text-center">
+                    <img src="../../../assets/img/big-family.jpg" style="max-width: 200px;" /><br />
+                    <span *ngIf="!hiddenButton1">{{'detailConfirm1' | translate}}</span>
+                    <span *ngIf="hiddenButton1 && showButton2">{{'detailConfirm2' | translate}}</span>
+                </div>
+                <div class="text-center margin-top-10">
+                    <button *ngIf="!hiddenButton1"
+                        (click)="doAnalyze()"
+                        class="normal-bt btn-analyzer">{{'buttonAnalyze' | translate}}</button>
+                    <button *ngIf="hiddenButton1 && showButton2"
+                        (click)="doOrder()"
+                        class="normal-bt btn-analyzer">{{'buttonOrder' | translate}}</button>
+                </div>
+            </section>
+            <app-banner></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

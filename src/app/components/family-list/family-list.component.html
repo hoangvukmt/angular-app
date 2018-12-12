@@ -1,0 +1,71 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="configuration">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <table class="configuration-table input-table">
+                    <colgroup>
+                        <col width="30%">
+                        <col width="60%">
+                        <col width="10%">
+                    </colgroup>
+                    <tr>
+                        <th colspan="3" class="configuration-title"></th>
+                    </tr>
+                    <tr>
+                        <td>{{'relationTitle.me' | translate}}</td>
+                        <td colspan="2" (click)="goPersonalInfo()">
+                            <span>
+                                {{personalInfo.RelationName}}
+                            </span>
+                            <span>
+                                {{personalInfo.BirthdayShow | date:'yyyy/MM/dd'}}
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th colspan="3" class="configuration-title">{{'titleUse' | translate}}</th>
+                    </tr>
+                    <tr *ngFor="let item of lstFamily">
+                        <td>
+                            <span (click)="deleteFamily(item)" class="minus-icon"></span>
+                            {{item.RelationName}}
+                        </td>
+                        <td (click)="goDetail(item.FamilyNo)">
+                            <span>
+                                {{'relationTitle.relationMe' | translate}}{{item.RelationName}}
+                            </span>
+                            <span>
+                                {{item.BirthdayShow | date:'yyyy/MM/dd'}}
+                            </span>
+                        </td>
+                        <td (click)="goDetail(item.FamilyNo)" class="right">
+                            <span class="arrow three-line"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" (click)="addNewFamily()" style="cursor: pointer;">
+                            <span class="red-circle-add bg-green"></span>
+                            {{'btnAddNewFamily' | translate}}
+                            <!--
+                            <button (click)="addNewFamily()" type="button" class="start-bt add-stock-btn">
+                                <span class="red-circle-add bg-green"></span>
+                                {{'btnAddNewFamily' | translate}}
+                            </button>
+                            -->
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <div class="work-area">
+                    <button class="circle-bt" (click)="doBack()">
+                        <span class="return-bt"></span><span class="text-bt">{{'buttonBack' | translate}}</span>
+                    </button>
+                </div>
+            </section>
+            <app-banner [bottomMargin]="true"></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

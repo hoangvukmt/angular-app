@@ -1,0 +1,78 @@
+<app-header-cpn [headerTitle]="headerTitle" [name]="name" [currentRelation]="currentRelation"></app-header-cpn>
+<div id="top">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <app-payment-box 
+                    *ngIf="listFamily.length>0"
+                    [(person)]="person"
+                    (changeRelation)="listenChangeRelation($event)" 
+                    [listFamily]="listFamily"
+                    [mpm]="mpm" [mpy]="mpy">
+                </app-payment-box>
+            </section>
+
+            <section>
+                <div class="line-box" *ngFor="let objHoken of objListCategoryDetail, let i = index">
+                    <table class="noborder-table">
+                        <colgroup>
+                            <col width="10%">
+                            <col width="40%">
+                            <col width="40%">
+                            <col width="10%">
+                        </colgroup>
+                        <tr>
+                            <td *ngIf="objHoken.NyuryokuF === 0" colspan="2" (click)="goDetail(i)">
+                                <span *ngIf="objHoken.CompanyName" class="company-name">{{objHoken.CompanyName}}</span>
+                                <br *ngIf="!objHoken.CompanyName" class="company-name-br" style>
+                            </td>
+                            <td *ngIf="objHoken.NyuryokuF !== 0" colspan="3" (click)="goDetail(i)">
+                                <span *ngIf="objHoken.CompanyName" class="company-name">{{objHoken.CompanyName}}</span>
+                                <br *ngIf="!objHoken.CompanyName" class="company-name-br" style>
+                            </td>
+                            <td *ngIf="objHoken.NyuryokuF === 0" rowspan="3" (click)="goToImage(i)">
+                                <img src="{{listFileIDAuto[i].src}}" onload="test(this)" class="image">
+                            </td>
+                            <td class="right" rowspan="3">
+                                <div class="group-tool">
+                                    <button class="swipe-bt delete" (click)="deleteKeiyaku(objHoken.KeiyakuNo)"></button>
+                                    <span class="arrow"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr (click)="goDetail(i)">
+                            <td colspan="3">
+                                <span *ngIf="objHoken.ProductName" class="product-name">{{objHoken.ProductName}}</span>
+                                <br *ngIf="!objHoken.ProductName" class="product-name-br">
+                            </td>
+                        </tr>
+                        <tr (click)="goDetail(i)">
+                            <td>
+                                <span class="price-label">{{'priceLabel' | translate}}</span>
+                            </td>
+                            <td>
+                                <span class="product-price">{{objHoken.Money}}</span>
+                                <span class="pay">{{getMoney(objHoken)}}</span><span *ngIf="objHoken.HaraikataName">/{{objHoken.HaraikataName}}</span>
+                            </td>
+                            <td class="text-center" *ngIf="objHoken.NyuryokuF !== 0">
+                                <span class="product-state" >{{objHoken.StatusName}}</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="line-box">
+                    <table class="noborder-table">
+                        <tr>
+                            <td (click)="doAdd()" style="height: 40px;">
+                                <span class="red-circle-add"></span>
+                                保険証券の追加
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <app-banner></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

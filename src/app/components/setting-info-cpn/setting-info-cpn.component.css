@@ -1,0 +1,27 @@
+#configuration table tr td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#configuration .img-banner img{
+    max-width: 200px;
+}
+
+@media only screen and (max-width: 824px){
+    .margin-top-25per{
+        margin-top: 25%;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 769px){
+    
+}
+@media only screen and (min-width: 1024px){
+    
+}
+@media only screen and (max-height: 740px){
+    
+}
+@media only screen and (max-height: 415px){
+    .margin-top-25per{
+        margin-top: 10px;
+    }
+}

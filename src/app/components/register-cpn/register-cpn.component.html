@@ -1,0 +1,46 @@
+<div id="register">
+    <div class="contents">
+        <div class="inner">
+            <div class="box-inner">
+                <section>
+                    <img class="banner padding-10" src="assets/img/login-img.png" />
+                    <div class="register-form">
+                        <div class="normal-bt">{{'button_1' | translate}}</div>
+                        <div class="normal-bt">{{'button_2' | translate}}</div>
+                        <div class="normal-bt">{{'button_3' | translate}}</div>
+                        <div class="input-box">
+                            <input matInput 
+                                [formControl]="emailFormControl" 
+                                [ngClass]="{'input-error': (emailFormControl.hasError('email') || emailFormControl.hasError('required')) && (emailFormControl.dirty || emailFormControl.touched)}"
+                                (keyup)="clearErr()" 
+                                type="text" class="email" placeholder="{{'placeholder' | translate}}" maxlength="255" />
+                            <div *ngIf="requestResult.err && !(
+                                emailFormControl.hasError('required') && 
+                                emailFormControl.hasError('email') && 
+                                (emailFormControl.dirty || emailFormControl.touched)
+                            )" class="mat-error">
+                                {{requestResult.msg}}
+                            </div>
+                            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                {{'err_msg.email_invalid' | translate}}
+                            </mat-error>
+                            <mat-error *ngIf="emailFormControl.hasError('required') && (emailFormControl.dirty || emailFormControl.touched)">
+                                {{'err_msg.email_require' | translate}}
+                            </mat-error>
+                            <mat-error class="alert-success" *ngIf="registerSuccess">
+                                {{'err_msg.alert_success' | translate}}
+                            </mat-error>
+                        </div>
+                    </div>
+                    <div class="register-footer">
+                        <button (click)="doRegister()" 
+                            [disabled]="emailFormControl.hasError('email') || emailFormControl.hasError('required')" 
+                            [ngClass]="{'input-disable': emailFormControl.hasError('email') || emailFormControl.hasError('required')}" 
+                            class="normal-bt">{{'button_submit' | translate}}</button>
+                    </div>
+                </section>
+                <app-banner></app-banner>
+            </div>
+        </div>
+    </div>
+</div>

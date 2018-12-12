@@ -1,0 +1,16 @@
+{
+    "title1": "保険証券画像",
+    "title2": "関連資料画像",
+    "title3": "代理店名",
+    "title4": "保険会社名",
+    "title5": "保険種類",
+    "title6": "証券番号",
+    "title7": "契約状況",
+    "title8": "契約者",
+    "title9": "被保険者",
+    "shuKeiyaku": "主契約",
+    "tokuyaku": "特約追加",
+    "buttonReturn": "戻る",
+    "buttonEdit": "編集",
+    "errorType": "invalid type"
+}

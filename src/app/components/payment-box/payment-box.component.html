@@ -1,0 +1,35 @@
+<div class="payment-box">
+    <div class="month">
+        <div class="payment-title">
+            月額保険料
+        </div>
+        <div class="price-box">
+            <span class="price">{{mpm}}</span><span class="en"> 円</span>
+        </div>
+    </div>
+    <div class="price-line"></div>
+    <div class="year">
+        <div class="payment-title">
+            年額保険料
+        </div>
+        <div class="price-box">
+            <span class="price">{{mpy}}</span><span class="en"> 円</span>
+        </div>
+    </div>
+    <div class="select-family-box">
+        <button class="principal-icon select-family"
+                [class.icon100]="person.Relation===0 && sex==='1'"
+                [class.icon0]="person.Relation===0 && sex==='0'"
+                [class.icon1]="person.Relation===1" 
+                [class.icon2]="person.Relation===2"
+                [class.icon13]="person.Relation===13" 
+                [class.icon14]="person.Relation===14" 
+                [class.icon15]="person.Relation===15" 
+                [class.icon16]="person.Relation===16" 
+                [class.icon17]="person.Relation===17" 
+                [class.icon18]="person.Relation===18" 
+                [class.icon99]="person.Relation===99" 
+                (click)="openModal()"></button>
+        <span class="select-family-name">{{titleIcon}}</span>
+    </div>
+</div>

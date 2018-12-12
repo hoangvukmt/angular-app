@@ -1,0 +1,25 @@
+<div id="tutorial">
+    <div class="contents">
+        <div class="inner">
+            <div class="box-inner">
+                <section>
+                    <div class="tutorial-title">
+                        {{'titleShouken' | translate}}
+                    </div>
+                    <div class="shouken-img large">
+                        <img class="" src="assets/img/start-apply.png">
+                    </div>
+                    <div class="tutorial-footer">
+                        <div class="input-box">
+                            <button class="normal-bt next-bt" (click)="doApply()">{{'buttonApply' | translate}}</button>
+                        </div>
+                        <div class="input-box">
+                            <button class="start-bt" (click)="doStartNow()">{{'buttonStart' | translate}}</button>
+                        </div>
+                    </div>
+                </section>
+                <app-banner></app-banner>
+            </div>
+        </div>
+    </div>
+</div>

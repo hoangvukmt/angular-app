@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>保険フォルダ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link href="./assets/css/sandbox.css" rel="stylesheet">
+    <link href="./assets/css/drawer.min.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script>
+        __Zone_enable_cross_context_check = true;
+    </script>
+    <script src="/assets/js/webcam.min.js"></script>
+    <script src="https://cdn.WebRTC-Experiment.com/DetectRTC.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.js"></script>
+    <!-- <script src="https://pixlcore.com/demos/webcamjs/webcam.min.js"></script> -->
+    <script>
+        DetectRTC.load(function() {
+            if (DetectRTC.browser.name === "IE") {
+                localStorage.setItem('hasCamera', true);
+            }
+            else {
+                if (DetectRTC.hasWebcam || DetectRTC.videoInputDevices.length > 0) {
+                    localStorage.setItem('hasCamera', true);
+                }
+                else {
+                    localStorage.setItem('hasCamera', false);
+                }
+            }
+        });
+    </script>
+    <script src="./assets/js/glfx.js" type="text/javascript"></script>
+</head>
+<body class="drawer drawer--left" onresize="deviceResize()">
+    <app-root></app-root>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script charset="utf-8" src="./assets/js/drawer.min.js"></script> 
+    <script src="./assets/js/remodal.js" type="text/javascript"></script>
+	<link href="./assets/css/remodal.css" media="all" rel="stylesheet" type="text/css">
+    <link href="./assets/css/remodal-default-theme.css" media="all" rel="stylesheet" type="text/css">
+    <script src="./assets/js/script.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function() {
+            setHeightSideBar();
+        });
+    </script>
+</body>
+</html>

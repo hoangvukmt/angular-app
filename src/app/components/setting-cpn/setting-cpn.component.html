@@ -1,0 +1,59 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="configuration">
+    <div class="contents">
+        <div class="inner">
+            <section >
+                <table class="configuration-table input-table">
+                    <colgroup>
+                        <col width="10%">
+                        <col width="80%">
+                        <col width="10%">
+                    </colgroup>
+                    <tr>
+                        <th colspan="3" class="configuration-title">{{'titleTotal' | translate}}</th>
+                    </tr>
+                    <tr>
+                        <td><span class="configuration-bt terms-service"></span></td>
+                        <td (click)="goDetail(1)">{{'title1' | translate}}</td>
+                        <td class="right" (click)="goDetail(1)">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="configuration-bt terms-service"></span></td>
+                        <td (click)="goDetail(2)">{{'title2' | translate}}</td>
+                        <td class="right" (click)="goDetail(2)">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="configuration-bt license"></span></td>
+                        <td (click)="goDetail(3)">{{'title3' | translate}}</td>
+                        <td class="right" (click)="goDetail(3)">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="configuration-bt tutorial"></span></td>
+                        <td (click)="goDetail(4)">{{'title4' | translate}}</td>
+                        <td class="right" (click)="goDetail(4)">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="configuration-bt version"></span></td>
+                        <td (click)="goDetail(5)">
+                            {{'title5' | translate}}
+                            <span class="float-right">{{'version' | translate}}</span>
+                        </td>
+                        <td class="right" (click)="goDetail(5)">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <app-banner [bottomMargin]="true"></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

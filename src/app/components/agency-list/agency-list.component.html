@@ -1,0 +1,46 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="configuration">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <table class="configuration-table input-table">
+                    <colgroup>
+                        <col width="10%">
+                        <col width="80%">
+                        <col width="10%">
+                    </colgroup>
+                    <tr *ngFor="let item of lstAgent">
+                        <td>
+                            <span (click)="doDelete(item.AgentNo, item.AgentName)" class="minus-icon"></span>
+                        </td>
+                        <td (click)="goDetail(item.AgentNo)">{{item.AgentName}}</td>
+                        <td (click)="goDetail(item.AgentNo)" class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" (click)="addNewAgency()" style="cursor: pointer;">
+                            <span class="red-circle-add bg-green"></span>
+                            {{'buttonAddNew' | translate}}
+                            <!--
+                            <button (click)="addNewAgency()" type="button" class="start-bt add-stock-btn">
+                                <span class="red-circle-add bg-green"></span>
+                                {{'buttonAddNew' | translate}}
+                            </button>
+                            -->
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <div class="work-area">
+                    <button class="circle-bt" (click)="doBack()">
+                        <span class="return-bt"></span><span class="text-bt">{{'buttonReturn' | translate}}</span>
+                    </button>
+                </div>
+            </section>
+            <app-banner [bottomMargin]="true"></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

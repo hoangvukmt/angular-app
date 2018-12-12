@@ -1,0 +1,183 @@
+#register section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.register-title {
+    font-size: 24px;
+    color: #666;
+    text-align: center;
+    line-height: 36px;
+    margin-bottom: 0;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.register-form .normal-bt{
+    margin-top: 5px;
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+    background-color: rgb(255, 84, 2);
+}
+.register-form .input-box{
+    margin-top: 40px;
+    margin-bottom: 0px
+}
+.register-form input.email{
+    border-radius: 0;
+    width: 100%;
+    display: block;
+}
+.register-footer .normal-bt{
+    border-radius: 0;
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+}
+#register .box-inner{
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+.register-form {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.register-footer {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 20px;
+}
+div.normal-bt{
+    cursor: default;
+}
+
+@media only screen and (max-width: 479px){
+    #register .contents {
+        padding: 0;
+    }
+    #register .inner{
+        margin-top: 0;
+    }
+    #register img.banner{
+        width: 90%;
+    }
+    .register-title {
+        font-size: 16px;
+    }
+    .register-form .normal-bt{
+        margin-top: 10px;
+        width: 100%;
+    }
+    .register-form input.email{
+        margin-top: 20px;
+        width: 100%;
+    }
+    .register-footer .normal-bt{
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 0px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #register .contents {
+        padding: 0;
+    }
+    #register .inner{
+        margin-top: 0;
+    }
+    #register img.banner{
+        width: 90%;
+    }
+    .register-title {
+        font-size: 16px;
+    }
+    .register-form .normal-bt{
+        margin-top: 10px;
+        width: 100%;
+    }
+    .register-form input.email{
+        margin-top: 20px;
+        width: 100%;
+    }
+    .register-footer .normal-bt{
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 0px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #register .box-inner{
+        margin-top: 5px;
+    }
+    #register .contents {
+        padding: 0;
+    }
+    #register .inner{
+        margin-top: 0;
+    }
+    #register img.banner{
+        width: 90%;
+    }
+    .register-title {
+        font-size: 16px;
+    }
+    .register-form .normal-bt{
+        margin-top: 5px;
+        width: 100%;
+    }
+    .register-form input.email{
+        margin-top: 10px;
+        width: 100%;
+    }
+    .register-footer .normal-bt{
+        width: 100%;
+        margin-top: 20px;
+        padding: 10px 0px;
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    #register .register-title{
+        font-size: 16px;
+    }
+    .register-form, .register-footer
+    , .register-form .normal-bt
+    , .register-form input.email
+    , .register-footer .normal-bt {
+        width: 100%;
+    }
+    .register-footer .normal-bt {
+        margin-top: 5px;
+        padding: 10px 0px;
+    }
+}
+
+@media only screen and (max-height: 740px){
+    .register-form input.email{
+        margin-top: 15px;
+    }
+    .register-footer {
+        margin-top: 15px;
+    }
+}
+@media only screen and (max-height: 415px){
+    #register img.banner{
+        display: none;
+    }
+    .register-form .normal-bt {
+        margin-top: 5px;
+    }
+    .register-form input.email {
+        margin-top: 5px;
+    }
+    .register-footer {
+        margin-top: 5px;
+    }
+}

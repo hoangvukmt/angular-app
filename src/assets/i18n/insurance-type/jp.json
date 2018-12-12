@@ -1,0 +1,14 @@
+{
+    "titleIconHeart": "死亡時に備える",
+    "titleIconMedical": "病気やケガに備える",
+    "titleIconFig": "貯金を兼ねて備える",
+    "titleIconCar": "自動車の保険",
+    "titleIconHouse": "住まいの保険",
+    "titleIconSun": "旅行・レジャー・その他の保険",
+    "titleIconTravel": "旅行の保険",
+    "titleIconOther": "その他の保険",
+    "btnBack": "戻る",
+    "titleSend": "追加:",
+    "btnCancel": "キャンセル",
+    "btnUpload": "追加"
+}

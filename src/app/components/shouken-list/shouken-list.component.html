@@ -1,0 +1,178 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="list"  *ngIf="!isShowCamera">
+    <div class="contents">
+        <div class="inner">
+            <section class="pc">
+                <table class="noborder-table input-table">
+                    <colgroup>
+                        <col width="20%">
+                        <col width="70%">
+                        <col width="10%">
+                    </colgroup> 
+                    <tr class="tr-line-bottom" *ngFor='let image of images; let i = index'>
+                        <td *ngIf="statusPage!=='relation' && param>0" (click)="goDetail(image.GroupID,image.FileID)">
+                            <span class="thumbnail"><img alt="" class="img" id="{{i}}" onload="test(this)" src="{{urlAPI}}api/getFileImg?group_id={{image.GroupID}}&file_id={{image.FileID}}&token={{token}}&{{random}}"></span>
+                        </td>
+                        <td *ngIf="statusPage==='relation'&& param>=0" (click)="goDetail(null,image.FileName)">
+                            <span class="thumbnail"><img alt="" class="img" id="{{i}}" onload="test(this)" src="{{urlAPI}}api/getFileRelation?user_no={{user_no}}&file_name={{image.FileName}}&token={{token}}&{{random}}"></span>
+                        </td>
+                        <td *ngIf="statusPage!=='relation' && param>0" (click)="goDetail(image.GroupID,image.FileID)">
+                            <span class="list-name">{{image.UpdateDate}}</span>
+                        </td>
+                        <td *ngIf="statusPage==='relation' && param>=0" (click)="goDetail(null,image.FileName)">
+                            <span class="list-name">{{image.UpdateDate}}</span>
+                        </td>
+                        <td class="rgiht" >
+                            <button *ngIf="enableDelete && param>0" class="swipe-bt delete" (click)="deleteFile(image.GroupID,image.FileID,i)"></button>
+                        </td>
+                    </tr>       
+                    <tr class="tr-line-bottom" *ngFor='let FileNameTemp of listFileNameTemp; let i = index'>
+                        <td *ngIf="statusPage !== 'relation' && param <= 0" (click)="goDetail(0, FileNameTemp.id)">
+                            <span class="thumbnail"><img alt="" class="img" id="{{i}}" onload="test(this)" src="{{urlAPI}}api/getFileImgTemp?file_name={{FileNameTemp.fileName.substring(2, FileNameTemp.fileName.length)}}&token={{token}}&random={{random}}"></span>
+                        </td>
+                        <td *ngIf="statusPage !== 'relation' && param <= 0" (click)="goDetail(0, FileNameTemp.id)">
+                            <span class="list-name">{{FileNameTemp.fileName}}</span>
+                        </td>
+                        <td class="rgiht">
+                            <button *ngIf="enableDelete && param <=0 " class="swipe-bt delete" (click)="deleteFileTemp(i)"></button>
+                        </td>
+                    </tr>
+
+                    <tr class="tr-line-bottom" *ngIf="enableBtnAddImg()">
+                        <td colspan="3" *ngIf="isiDevice && isHideDialog">
+                            <label for="image_idevice">
+                                <span class="red-circle-add"></span>
+                                {{'btnAdd' | translate}}
+                            </label>
+                        </td>
+                        <td colspan="3" (click)="doAdd()" *ngIf="isiDevice && !isHideDialog">
+                            <span class="red-circle-add"></span>
+                            {{'btnAdd' | translate}}bb
+                        </td>
+                        <td colspan="3" (click)="doAdd()" *ngIf="!isiDevice">
+                            <span class="red-circle-add"></span>
+                            {{'btnAdd' | translate}}
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section class="pc" *ngIf="enableBtnAutoAndHandler()">
+                <div class="work-area">
+                    <button class="btn-1" [disabled]="images.length === 0 && listFileNameTemp.length === 0" [ngClass]="{'input-disable': images.length === 0 && listFileNameTemp.length === 0}" (click)="doAuto()">{{'btnAuto' | translate}}</button>
+                    <button class="btn-2" (click)="doHandle()">{{'btnHandle' | translate}}</button>
+                </div>
+            </section>
+            <section class="pc" *ngIf="!enableBtnAutoAndHandler()">
+                <div class="work-area-back">
+                    <button class="circle-bt" (click)="doBack()">
+                        <span class="return-bt"></span>
+                        <span class="text-bt">戻る</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="sp">
+                <table class="noborder-table input-table">
+                    <colgroup>
+                        <col width="20%">
+                        <col width="70%">
+                        <col width="10%">
+                    </colgroup>
+                    <tr class="tr-line-bottom" *ngFor='let image of images; let i = index'>
+                        <td *ngIf="statusPage!=='relation' && param>0" (click)="goDetail(image.GroupID,image.FileID)">
+                                <span class="thumbnail"><img alt="" class="img" id="{{i}}" onload="test(this)" src="{{urlAPI}}api/getFileImg?group_id={{image.GroupID}}&file_id={{image.FileID}}&token={{token}}"></span>
+                            </td>
+                            <td *ngIf="statusPage==='relation' && param>=0" (click)="goDetail(null,image.FileName)">
+                                <span class="thumbnail"><img alt="" class="img" id="{{i}}" onload="test(this)" src="{{urlAPI}}api/getFileRelation?user_no={{user_no}}&file_name={{image.FileName}}&token={{token}}"></span>
+                            </td>
+                            <td *ngIf="statusPage!=='relation' && param>0" (click)="goDetail(image.GroupID,image.FileID)">
+                                <span class="list-name">{{image.UpdateDate}}</span>
+                            </td>
+                            <td *ngIf="statusPage==='relation' && param>=0" (click)="goDetail(null,image.FileName)">
+                                <span class="list-name">{{image.UpdateDate}}</span>
+                            </td>
+                            <td class="rgiht" >
+                                <button *ngIf="enableDelete" class="swipe-bt delete" (click)="deleteFile(image.GroupID,image.FileID,i)"></button>
+                        </td>
+                    </tr>
+                    <tr class="tr-line-bottom" *ngFor='let FileNameTemp of listFileNameTemp; let i = index'>
+                        <td *ngIf="statusPage !== 'relation' && param  <= 0 " (click)="goDetail(0, FileNameTemp.id)">
+                            <span class="thumbnail"><img alt="" class="img" id="{{i}}" onload="test(this)" src="{{urlAPI}}api/getFileImgTemp?file_name={{FileNameTemp.fileName.substring(2, FileNameTemp.fileName.length)}}&token={{token}}&random={{random}}"></span>
+                        </td>
+                        <td *ngIf="statusPage !== 'relation' && param <= 0" (click)="goDetail(0, FileNameTemp.id)">
+                            <span class="list-name">{{FileNameTemp.fileName}}</span>
+                        </td>
+                        <td class="rgiht" >
+                            <button *ngIf="enableDelete && param <= 0" class="swipe-bt delete" (click)="deleteFileTemp(i)"></button>
+                        </td>
+                    </tr>
+
+                    <tr class="tr-line-bottom" *ngIf="enableBtnAddImg()">
+                        <td colspan="3" >
+                            <label id="lbDoAdd" for="image_idevice" *ngIf="isiDevice && isHideDialog">
+                                <span class="red-circle-add"></span>
+                                {{'btnAdd' | translate}}
+                            </label>
+                            <label id="lbDoAdd" (click)="doAdd()" *ngIf="isiDevice && !isHideDialog">
+                                <span class="red-circle-add"></span>
+                                {{'btnAdd' | translate}}
+                            </label>
+                            <label id="lbDoAdd" (click)="doAdd()" *ngIf="!isiDevice">
+                                <span class="red-circle-add"></span>
+                                {{'btnAdd' | translate}}
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="sp" *ngIf="enableBtnAutoAndHandler()">
+                <div class="work-area">
+                    <button class="btn-1" [disabled]="images.length ===0 && listFileNameTemp.length === 0" [ngClass]="{'input-disable': images.length === 0 && listFileNameTemp.length === 0}" (click)="doAuto()">{{'btnAuto' | translate}}</button>
+                    <button class="btn-2" (click)="doHandle()">{{'btnHandle' | translate}}</button>
+                </div>
+            </section>
+            <section class="sp" *ngIf="!enableBtnAutoAndHandler()">
+                <div class="work-area-back">
+                    <button class="circle-bt" (click)="doBack()">
+                        <span class="return-bt"></span>
+                        <span class="text-bt">戻る</span>
+                    </button>
+                </div>
+            </section>
+
+            <app-banner [bottomMargin]="true"></app-banner>
+        </div>
+    </div>
+</div>
+<div class="camera" *ngIf="isShowCamera">
+    <div style="text-align: center">
+        <webcam [trigger]="triggerObservable" (imageCapture)="handleImage($event)"></webcam>
+        <br/>
+        <button class="normal-bt" (click)="triggerSnapshot();">Take A Snapshot</button>
+    </div>
+</div>
+<app-footer-cpn *ngIf="enableBtnAutoAndHandler()"></app-footer-cpn>
+
+<div class="popup-upload" [hidden]="hiddenPopup">
+    <div id="ideviceUpload" class="popup-custom">
+        <div class="popup-title">保険証券をカメラ撮影します。</div>
+        <div class="popup-content">
+            <div class="img-content">
+                <img src="../../../../assets/img/start-img-popup.png" />
+            </div>
+            <div class="text-content">
+                <span class="text-red text-bold">１契約単位</span><br /> 保険証券の保険内容登録は、１契約単位になりますので、ご注意ください。
+            </div>
+        </div>
+        <div class="popup-footer popup-footer-custom">
+            <label class="normal-bt btn-block" for="image_idevice" (click)="openChooseFile()">OK</label>
+            <input accept="image/*" class="hidden" id="image_idevice" name="image_idevice" type="file" (change)="uploadIdevice()" />
+            <span class="checkbox-group">
+                <input id="chkFrank2" name="name" type="checkbox" [ngModel]="ischeck" (ngModelChange)="handleCheckbox($event)">
+                <label class="check check-square" for="chkFrank2"></label>
+                <label class="check-text" for="chkFrank2">この画面を２度と表示しない</label>
+            </span>
+        </div>
+    </div>
+</div>

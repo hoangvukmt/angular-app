@@ -1,0 +1,403 @@
+
+
+img {
+    margin: 0px;
+}
+
+.contents {
+    padding: 0px 0px;
+}
+
+.inner {
+    width: 100%; 
+    text-align: center;
+}
+
+.circle-bt {
+    background-color: #2C3E50;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-flex;
+}
+
+.circle-bt-zoom {
+    background-color: #2C3E50;
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: inline-flex;
+}
+
+@media only screen and (max-width: 767px) {
+    .circle-bt2 {
+        background-color: #2C3E50;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+        margin-right: 0px;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        display: inline-flex;
+	}
+	.return-bt {
+		width: 15px;
+		height: 15px;
+		background-size: 15px;
+    }
+    .text-bt {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+    .circle-bt2 {
+        background-color: #2C3E50;
+        width: 80px;
+        height: 40px;
+        border-radius: 4px;
+        border: none;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        display: inline-flex;
+    }
+
+    .return-bt {
+        background-image: url(../../../../assets/img/return-bt.png);
+        background-repeat: no-repeat;
+        width: 15px;
+        height: 15px;
+        background-size: 15px;
+        display: inline-block;
+    }
+
+    .text-bt {
+        padding-left: 10px;
+        color: #fff;
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
+
+
+
+.button-back {
+    background-image: url('../../../../assets/img/delete-button.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+}
+
+.rotate-left {
+    background-image: url('../../../../assets/img/rotate-left.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+}
+
+.rotate-right {
+    background-image: url('../../../../assets/img/rotate-right.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+}
+
+.edit-image {
+    background-image: url('../../../../assets/img/edit-image.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+}
+
+.done-btn {
+    background-image: url('../../../../assets/img/done-bt.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+}
+
+.remove {
+    background-image: url('../../../../assets/img/return.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+}
+
+.masking {
+    background-image: url('../../../../assets/img/masking.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+}
+
+.zoomIn {
+    background-image: url('../../../../assets/img/add.png');
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 8px;
+    background-size: 8px;
+    display: inline-block;
+}
+
+.zoomOut {
+    background-image: url('../../../../assets/img/minus.png');
+    background-repeat: no-repeat;
+    width: 8px;
+    height: 8px;
+    background-size: 8px;
+    display: inline-block;
+}
+
+@import "https://use.fontawesome.com/releases/v5.1.1/css/all.css";
+
+.header-edit {
+    width: 100%;
+    height: 50px; /* ツール高さ */
+    z-index: 999;
+    /* position: absolute; */
+    left: 0px;
+    top: 0px;
+    padding-top: 5px;
+    background-color:#000000;
+    color:#ffffff;
+}
+
+.header-edit span {
+    color: #fff;
+}
+
+.div-canvas{
+    display: flex; 
+    align-items: center; 
+    margin-top: 55px; 
+    /* background: #cccccc !important; */
+}
+
+.image-editor-inner {
+    float: left;
+    width: 100%;
+    height: 100%;
+    /* background-color: red; */
+    /* background-color: #cccccc; */
+    text-align: center;
+    position: relative;
+}
+
+#imageTool-zoom {
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    background-color: rgba(64, 64, 64, 0.5);
+    color:#000000;
+    top: 53px;
+}
+
+.tool {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    padding-top: 0px;
+    border-radius: 5px;
+    background-color: rgba(255, 200, 200, 0.5);
+    color:#000000;
+}
+
+.tool:hover {
+    background-color: rgba(255, 200, 200, 0.9);
+    color:#000000;
+}
+
+.icon {
+    color: aliceblue;
+    font-size: 17px;
+}
+.icon-ok {
+    color: aliceblue;
+    font-size: 17px;
+}
+.icon-ng {
+    color: aliceblue;
+    font-size: 17px;
+}
+
+.display-text {
+    font-size: 15px;
+    color: aliceblue
+}
+
+.fontSize {
+    font-size: 17px;
+}
+
+.btnMode {
+    margin-left: 20px; 
+    height: 35px;
+    background-color: #008AFF
+}
+
+.btnZoom {
+    height: 40px;
+    width: 90px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.btnEdit {
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+.left-head {
+    margin-left: 10px;
+    margin-top: 2px;
+    float: left; 
+    line-height: 40px;
+}
+
+@media only screen and (max-width: 767px) {
+	.sp{
+		display:inline  !important;
+	}
+}
+
+@media only screen and (max-width: 960px) {
+    .btnEdit {
+        height: 30px;
+        width: 30px;
+        margin-left: 40px; 
+        cursor: pointer;
+        background: transparent;
+        border: none;
+    }
+    .display-text {
+        display: none;
+    }
+
+    .btnZoom {
+        height: 40px;
+        width: 50px;
+        cursor: pointer;
+        background: transparent;
+        border: none;
+    }
+
+    .btnMode {
+        margin-left: 20px; 
+        height: 25px;
+        background-color: #008AFF
+    }
+    .fontSize {
+        font-size: 12px;
+    }
+    .left-head {
+        float: left; 
+        line-height: 40px;
+    }
+}
+
+#container-editor {
+    width: 100%;
+    height: 100%;
+    /* -webkit-overflow-scrolling: touch; */
+    overflow: scroll;
+}
+
+#container-editor::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+
+.image-editor-tool {
+    float: left;
+    width: 100%;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+/* .circle-bt {
+    background-color: #cccccc;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    border-radius: 50%;
+    width: 6vmin;
+    height: 6vmin;
+    margin-right: 10px;
+}
+.circle-bt span {
+    color: #fff;
+    font-size: 16px;
+} */
+
+.btn-large {
+    background-color: #cccccc;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    border-radius: 50%;
+    width: 6vmin;
+    height: 6vmin;
+    margin-right: 30px;
+}
+
+.btn-large span {
+    color: #fff;
+    font-size: 35px;
+}
+
+.btn-finish {
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    border-radius: 20%;
+    margin-right: 10px;
+}
+/* .remove {
+    background-image: url('src/assets/img/return.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+}
+
+.masking {
+    background-image: url('src/assets/img/masking.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    background-size: 15px;
+    display: inline-block;
+} */
+
+

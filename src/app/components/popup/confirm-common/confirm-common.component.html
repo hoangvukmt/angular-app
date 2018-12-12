@@ -1,0 +1,12 @@
+<div class="popup-custom">
+    <div class="popup-title" style="padding: 0 30px;">{{data.title}}</div>
+    <div class="popup-content">
+        <div class="text-content text-full-content" style="margin-bottom: 50px;">
+            <span class="text-red text-center" [innerHTML]="data.content"></span>
+        </div>
+    </div>
+    <div class="popup-footer popup-footer-custom text-center">
+        <button type="button" class="normal-bt btn-45 btn-default" (click)="doCancel()">キャンセル</button>
+        <button type="button" class="normal-bt btn-45" (click)="doAccept()">{{data.btnAcceptTitle}}</button>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{
+    "btnAnalyzer": "お試し証券分析",
+    "btn2": "分析結果を見る",
+    "from": "宛先",
+    "fromText": "保険フォルダカスタマー",
+    "titleSendMessage":"件名",
+    "buttonBack": "戻る",
+    "btnSend": "送信",
+    "err_msg": {
+        "titleRequired": "件名が必要です",
+        "messageRequired": "Message is required"
+    }
+}

@@ -1,0 +1,192 @@
+.tutorial-title {
+    font-size: 18px;
+}
+.tutorial-form .btn-sex {
+    background-color: #fff;
+    color: #E94B3F;
+    border: 1px solid #E94B3F;
+}
+.tutorial-form button.active{
+    background-color: #E94B3F;
+    color: #fff;
+}
+.input-box {
+    margin-bottom: unset;
+    padding-bottom: 20px;
+    text-align: unset;
+    float: left;
+    width: 100%;
+}
+.input-box .input-title {
+    margin: 0;
+    float: left;
+    width: 30%;
+    text-align: right;
+    line-height: 40px;
+    font-size: 16px;
+}
+.input-box .input-element {
+    float: left;
+    width: 70%;
+}
+.input-box .input-element mat-select {
+    height: 40px;
+}
+.mat-error {
+    margin-left: 30%;
+    top: 39px;
+    font-size: 12px;
+}
+#tutorial .box-inner{
+    max-width: 320px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.tutorial-form, .tutorial-footer{
+    width: 100%;
+}
+.button-tool span {
+    width: 20%;
+    margin-right: 20px;
+    padding: 14px 0px;
+}
+.button-tool button{
+    width: 30%;
+    margin-right: 5px;
+    padding: 10px 0px;
+    min-width: 30%;
+}
+.button-tool button:last-child{
+    margin: 0;
+}
+.mat-input-element:disabled {
+    color: inherit;
+    background-color: transparent;
+}
+
+@media only screen and (max-width: 479px){
+    #tutorial .contents{
+        padding-top: 10px;
+    }
+    #tutorial .box-inner{
+        min-height: 400px;
+    }
+    .tutorial-title{
+        margin-bottom: 10px;
+    }
+    .tutorial-footer {
+        position: unset;
+    }
+    .tutorial-footer .input-box button{
+        margin-top: 15px;
+    }
+    .work-area{
+        position: unset;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #tutorial .contents{
+        padding-top: 30px;
+    }
+    #tutorial .box-inner{
+        min-height: 400px;
+    }
+    .tutorial-title{
+        margin-bottom: 10px;
+    }
+    .tutorial-footer {
+        position: unset;
+    }
+    .tutorial-footer .input-box button{
+        margin-top: 15px;
+    }
+	.work-area{
+        position: unset;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #tutorial .contents{
+        padding-top: 30px;
+    }
+    #tutorial .box-inner{
+        min-height: 400px;
+    }
+    .tutorial-title{
+        margin-bottom: 10px;
+    }
+    .tutorial-footer {
+        position: unset;
+    }
+    .work-area{
+        position: unset;
+        margin-top: 10px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    .tutorial-img{
+        margin-bottom: 10px;
+    }
+    .tutorial-title {
+        margin-bottom: 40px;
+    }
+    .tutorial-form .input-box{
+        margin-bottom: 10px;
+    }
+    .tutorial-footer .normal-bt{
+        margin-top: 0px;
+    }
+    .work-area {
+        margin-top: 0px;
+        width: 300px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    .tutorial-title, .tutorial-img {
+        margin-bottom: 20px;
+    }
+    .tutorial-footer .input-box button{
+        margin: 0;
+    }
+    .work-area {
+        margin-top: 0px;
+        width: 300px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 415px){
+    .form-margin-100{
+        margin-bottom: 100px;
+    }
+}

@@ -1,0 +1,80 @@
+.price-label{
+    background-color: transparent;
+    color: inherit;
+    border: 1px solid #999;
+}
+.company-name, .product-name{
+    font-weight: bold;
+}
+button.delete {
+    margin-right: 15px !important;
+    cursor: pointer;
+}
+div.group-tool {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 479px){
+    .product-price {
+		font-size: 3vmin;
+		margin-right: 0px;
+	}
+}
+
+.company-name-br {
+    line-height: 24px;
+}
+
+.product-name-br {
+    line-height: 20px;
+}
+
+.image {
+    padding: 5px 10px;
+    margin-left: 10px;
+    height: 90px; 
+    width: auto;
+}
+
+
+
+@media only screen and (max-width: 479px){
+   
+}
+
+@media only screen and (min-width: 480px) and (max-width: 530px){
+ 
+}
+
+@media only screen and (min-width: 530px) and (max-width: 599px){
+    
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+ 
+}
+
+@media only screen and (min-width: 960px){
+ 
+}
+
+@media only screen and (max-width: 767px){
+    .product-name-br {
+        line-height: 3.5vmin;
+    }
+    .company-name-br {
+        line-height: 4vmin;
+    }
+    .image {
+        margin-left: 5px;
+        height: 15vmin; 
+        width: auto;
+    }
+}
+
+@media only screen and (max-height: 415px){
+    .footer-img{
+        display: none;
+    }
+}

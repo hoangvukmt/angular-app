@@ -1,0 +1,25 @@
+<div class="select-img-item">
+    <div class="select-item" *ngIf="hasCamera">
+        <label style="margin: 0" for='image_camera'>写真またはビデオを撮る</label>
+        <div class="container uploadFile">
+            <label class="icon icon-camera" for='image_camera'></label>
+            <input type="file" name="image_camera" accept="image/*;capture=camera" id="image_camera" (change)="upload('image_camera')" />
+        </div>
+    </div>
+    <div class="select-item">
+        <label style="margin: 0" for='image_src'>フォトライブラリ</label>
+        <div class="container uploadFile">
+            <label class="select-wrapper" for='image_src'></label>
+            <input type="file" name="image_src" accept="image/*" id="image_src" (change)="upload('image_src')"/>
+        </div>
+    </div>
+    <!--
+    <div class="select-item" *ngIf="!isWindow">
+        <span>ブラウズ</span>
+        <span class="icon icon-three-dot"></span>
+    </div>
+    -->
+</div>
+<div class="select-img-footer">
+    <button type="button" class="normal-bt btn-block btn-default" (click)="closePopup()">キャンセル</button>
+</div>

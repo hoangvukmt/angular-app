@@ -1,0 +1,25 @@
+{
+    "titleLine1": "はじめに、ご本人様の情報を",
+    "titleLine2": "入力してください",
+    "sex": "性別",
+    "male": "男性",
+    "female": "女性",
+    "fullName": "お名前",
+    "datePlaceholder": "生年月日",
+    "firstNamePlaceholder": "姓",
+    "lastNamePlaceholder": "名",
+    "buttonAddFamily": "家族を追加する",
+    "buttonSave": "次へ",
+    "buttonBack": "戻る",
+    "buttonDone": "完了",
+    "err_msg": {
+        "birthdayRequired": "お誕生日を入力してください",
+        "birthdayGreater": "生年月日は現在日より未来日を入力できません。",
+        "firstNameRequired": "苗字を入力してください",
+        "lastNameRequired": "名前を入力してください",
+        "fullNameRequired": "苗字と名前を入力してください"
+    },
+    "sexTitle": {
+        "nullValue": "性別"
+    }
+}

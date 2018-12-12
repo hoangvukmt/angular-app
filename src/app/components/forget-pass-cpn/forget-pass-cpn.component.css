@@ -1,0 +1,159 @@
+#forget-pass section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+#forget-pass .img-banner{
+    padding: 10px 20px;
+}
+.forget-pass-form .input-box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.forget-pass-form input.email{
+    border-radius: 0;
+    width: 100%;
+    display: block;
+}
+.forget-pass-form span{
+    text-align: center;
+    display: block;
+    line-height: 18px;
+}
+.forget-pass-footer .normal-bt{
+    border-radius: 0;
+    margin-top: 20px;
+    width: 100%;
+    display: block;
+    font-size: 16px;
+}
+.forget-pass-form {
+    width: 100%;
+}
+.forget-pass-form input.email{
+    margin-top: 20px;
+    width: 100%;
+}
+.forget-pass-footer {
+    width: 100%;
+    margin-top: 30px;
+}
+#forget-pass .box-inner{
+    max-width: 320px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+@media only screen and (max-width: 479px){
+    #forget-pass .contents {
+        padding: 0;
+    }
+    #forget-pass .inner{
+        margin-top: 0;
+    }
+    .forget-pass-footer .normal-bt{
+        margin-top: 0;
+    }
+	.work-area{
+        position: unset;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #forget-pass .contents {
+        padding: 0;
+    }
+    #forget-pass .inner{
+        margin-top: 0;
+    }
+    .forget-pass-footer .normal-bt{
+        margin-top: 0;
+    }
+	.work-area{
+        position: unset;
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #forget-pass .contents {
+        margin-top: 10px;
+    }
+    #forget-pass .contents {
+        padding: 0;
+    }
+    .forget-pass-form input.email{
+        margin-top: 10px;
+    }
+    .work-area{
+        position: unset;
+        margin-top: 20px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button span.text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    .forget-pass-footer .normal-bt {
+        margin-top: 15px;
+    }
+    .work-area{
+        margin-top: 20px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button span.text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    .forget-pass-footer .normal-bt {
+        margin-top: 15px;
+    }
+    .work-area{
+        margin-top: 20px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button span.text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 415px){
+    #forget-pass .contents {
+        margin-top: 10px;
+    }
+    #forget-pass .img-banner{
+        display: none;
+    }
+    .forget-pass-form .input-box{
+        margin-top: 0;
+    }
+    .forget-pass-form input.email {
+        margin-top: 0;
+    }
+    .forget-pass-footer {
+        margin-top: 5px;
+    }
+    .work-area{
+        position: inherit;
+    }
+}

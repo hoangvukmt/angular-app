@@ -1,0 +1,36 @@
+{
+    "title": {
+        "title1": "保険証券画像",
+        "title2": "関連資料画像",
+        "title3": "代理店名",
+        "title4": "保険会社名",
+        "title5": "保険種類",
+        "title6": "証券番号",
+        "title7": "契約状況",
+        "title8": "契約者",
+        "title9": "被保険者",
+        "title10": "保険期間",
+        "title11": "保険料",
+        "title12": "保険料払込方法",
+        "title13": "保険料払期間",
+        "title14": "死亡保険金",
+        "title15": "死亡給付金受取人",
+        "title16": "追加",
+        "contractDate": "契約日",
+        "startDate": "保険始期日",
+        "hokenEndDate": "保険終期日",
+        "shuKeiyaku": "主契約",
+        "tokuyaku": "特約追加",
+        "addHosho": "追加",
+        "addTokuyaku": "特約追加",
+        "hoshoCategory": "保険分類"
+    },
+    "btnReturn": "戻る",
+    "btnDone": "完了",
+    "err_msg": {
+        "statusRequired": "契約状況を入力してください",
+        "familyNoRequired": "契約者を入力してください",
+        "hihoFamilyNoRequired": "被保険者を入力してください"
+    },
+    "errorType": "データの形式は正しくありません"
+}

@@ -1,0 +1,99 @@
+.tutorial-footer .start-bt{
+    width: 100%;
+    font-weight: bold;
+}
+.tutorial-img img{
+    height: unset;
+}
+#tutorial .box-inner{
+    width: 320px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.tutorial-form, .tutorial-footer{
+    width: 100%;
+}
+
+@media only screen and (max-width: 479px){
+    #tutorial .contents{
+        padding-top: 10px;
+    }
+    .tutorial-footer {
+        position: unset;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #tutorial .contents{
+        padding-top: 10px;
+    }
+    .tutorial-footer {
+        position: unset;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px){
+    #tutorial .contents{
+        padding-top: 10px;
+    }
+    .tutorial-footer {
+        position: unset;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px){
+    #tutorial .box-inner{
+        width: 500px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    #tutorial .contents{
+        padding-top: 10px;
+    }
+    .tutorial-footer {
+        position: unset;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    #tutorial .box-inner{
+        width: 500px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .tutorial-title, .tutorial-img {
+        margin-bottom: 20px;
+    }
+    .tutorial-footer .normal-bt{
+        margin-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    #tutorial .box-inner{
+        width: 500px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    #tutorial .contents{
+        padding-top: 10px;
+    }
+    .tutorial-title, .tutorial-footer .normal-bt, .tutorial-footer .start-bt, .tutorial-footer .input-box:last-child{
+        margin: 0;
+    }
+    .tutorial-img {
+        margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-height: 415px){
+    
+}

@@ -1,0 +1,16 @@
+input[type="number"]{
+    text-align: right;
+    width: 80%;
+}
+table tr td {
+    text-align: left;
+}
+input[type="number"].input-full {
+    width: 100%;
+}
+input {
+    height: 32.38px;
+}
+app-keiyaku-field > div > div {
+    width: 100%;
+}

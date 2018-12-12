@@ -1,0 +1,98 @@
+.mat-drawer-container{
+    position: static;
+}
+mat-drawer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 1000px;
+    z-index: 9 !important
+}
+mat-drawer .nav-content {
+    background-color: #fff;
+    width: 16.25rem;
+    height: 100%;
+    border-right: 1px solid #fff;
+}
+.drawer-nav {
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    color: #222;
+    background-color: #fff;
+}
+.sub-menu-custom {
+    margin-top: 8px;
+}
+.sub-menu-custom button {
+    background: none;
+}
+.sub-menu-bt-2 {
+    cursor: pointer;
+    background-color: unset;
+    border: 0;
+}
+button.sub-menu-bt-2:focus{
+    box-shadow: unset;
+    outline: none;
+}
+.icon0 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+.icon1 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+
+.icon100 {
+    background-image: url(/assets/img/wife.png)
+}
+
+.icon2 {
+    background-image: url(/assets/img/wife.png)
+}
+.icon13 {
+    background-image: url(/assets/img/children.png)
+}
+.icon14 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+.icon15 {
+    background-image: url(/assets/img/wife.png)
+}
+.icon16 {
+    background-image: url(/assets/img/children.png)
+}
+.icon17 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+.icon18 {
+    background-image: url(/assets/img/wife.png)
+}
+.icon99 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    
+}
+
+
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    
+}
+
+@media only screen and (min-width: 1280px){
+    
+}
+
+@media only screen and (max-height: 415px){
+    
+}
+
+@media only screen and (min-width: 768px){
+    
+}

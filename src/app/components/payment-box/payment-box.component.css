@@ -1,0 +1,47 @@
+.icon0 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+.icon1 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+
+.icon100 {
+    background-image: url(/assets/img/wife.png)
+}
+
+.icon2 {
+    background-image: url(/assets/img/wife.png)
+}
+.icon13 {
+    background-image: url(/assets/img/children.png)
+}
+.icon14 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+.icon15 {
+    background-image: url(/assets/img/wife.png)
+}
+.icon16 {
+    background-image: url(/assets/img/children.png)
+}
+.icon17 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+.icon18 {
+    background-image: url(/assets/img/wife.png)
+}
+.icon99 {
+    background-image: url(/assets/img/tutorial01.png)
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px){
+    .price {
+		font-size: 4vmin;
+	}
+}
+
+@media only screen and (min-width: 960px){
+    .price {
+		font-size: 40px;
+	}
+}

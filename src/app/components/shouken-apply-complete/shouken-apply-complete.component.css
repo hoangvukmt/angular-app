@@ -1,0 +1,36 @@
+
+@media only screen and (max-width: 824px){
+    #tutorial .contents{
+        padding-top: 10vmin;
+    }
+    #tutorial .box-inner{
+        min-height: 100vmin;
+    }
+    .tutorial-footer {
+        position: unset;
+        margin-top: 50px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 769px){
+    
+}
+@media only screen and (min-width: 1024px){
+    .tutorial-title, .tutorial-img {
+        margin-bottom: 20px;
+    }
+    .tutorial-footer .normal-bt{
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-height: 740px){
+    
+}
+@media only screen and (max-height: 415px){
+    .tutorial-footer .input-box button.start-bt{
+        margin-bottom: 30px;
+    }
+    .tutorial-footer {
+        position: unset;
+        margin-top: 5px;
+    }
+}

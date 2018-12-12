@@ -1,0 +1,115 @@
+.user-name {
+    display: block;
+}
+.work-area-setting{
+    position: unset;
+    margin-top: 10px;
+}
+.input-box {
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 479px){
+    #tutorial .contents{
+        padding-top: 50px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    #tutorial .contents{
+        padding-top: 50px;
+    }
+    #tutorial .box-inner{
+        width: 350px;
+        margin: auto;
+    }
+    .tutorial-form, .work-area-setting{
+        width: 100% !important;
+    }
+    .user-name {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 50px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    #tutorial .contents{
+        padding-top: 50px;
+    }
+    #tutorial .box-inner{
+        width: 350px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .tutorial-form, .work-area-setting{
+        width: 100% !important;
+    }
+    .work-area {
+        margin-top: 0px;
+        width: 300px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+    .user-name {
+        padding-top: 0;
+        padding-bottom: 0;
+        height: 50px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    #tutorial .box-inner{
+        width: 350px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .work-area {
+        margin-top: 0px;
+        width: 300px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1280px){
+    #tutorial .box-inner{
+        width: 350px;
+        margin: auto;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .work-area {
+        margin-top: 0px;
+        width: 300px;
+    }
+    .work-area button{
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+    }
+    .work-area button .text-bt{
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 415px){
+
+}

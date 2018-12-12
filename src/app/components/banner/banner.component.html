@@ -1,0 +1,16 @@
+<section [ngClass]="{'mobile-margin-bottom-50': bottomMargin}" class="footer-img">
+    <div class="status-bt slide-content">
+        <div *ngFor="let item of listImage, let i = index" [attr.data-index]="i" ontouchend="slideTouchend(this)">
+            <a *ngIf="item.BannerF === 0" [attr.href]="item.BannerMoveUrl" [attr.data-seconds]="item.Seconds" target="_blank" class="banner-slide">
+                <img src="{{urlAPI}}api/getFileBanner?file_name={{item.BannerImgPath}}&token={{token}}" alt="" class="img" />
+            </a>
+            <div *ngIf="item.BannerF !== 0" [attr.data-seconds]="item.Seconds" class="banner-slide" (click)="bannerClick(i, item.BannerF)">
+                <img src="{{urlAPI}}api/getFileBanner?file_name={{item.BannerImgPath}}&token={{token}}" alt="" class="img" />
+            </div>
+        </div>
+        
+        <div class="controll" *ngIf="showControll">
+            <span class="slide-controll" *ngFor="let item of listImage, let i = index" [attr.data-index]="i" onclick="nextSlide(this)">&nbsp;</span>
+        </div>
+    </div>
+</section>

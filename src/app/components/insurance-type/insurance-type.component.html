@@ -1,0 +1,100 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="configuration">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <table class="configuration-table input-table">
+                    <colgroup>
+                        <col width="10%">
+                        <col width="80%">
+                        <col width="10%">
+                    </colgroup>
+                    <tr (click)="goDetail(1)">
+                        <td>
+                            <span class="configuration-bt terms-service icon-heart"></span>
+                        </td>
+                        <td>{{'titleIconHeart' | translate}}</td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goDetail(2)">
+                        <td>
+                            <span class="configuration-bt terms-service icon-medical"></span>
+                        </td>
+                        <td>{{'titleIconMedical' | translate}}</td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goDetail(3)">
+                        <td>
+                            <span class="configuration-bt license icon-fig"></span>
+                        </td>
+                        <td>{{'titleIconFig' | translate}}</td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goDetail(4)">
+                        <td>
+                            <span class="configuration-bt tutorial icon-car"></span>
+                        </td>
+                        <td>{{'titleIconCar' | translate}}</td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goDetail(5)">
+                        <td>
+                            <span class="configuration-bt version ison-house"></span>
+                        </td>
+                        <td>{{'titleIconHouse' | translate}}</td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goDetail(6)">
+                        <td>
+                            <span class="configuration-bt version icon-other"></span>
+                        </td>
+                        <td>{{'titleIconSun' | translate}}</td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <!--
+                    <tr (click)="goDetail(7)">
+                        <td>
+                            <span class="configuration-bt version icon-travel"></span>
+                        </td>
+                        <td>{{'titleIconTravel' | translate}}</td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goDetail(8)">
+                        <td>
+                            <span class="configuration-bt version icon-other"></span>
+                        </td>
+                        <td>{{'titleIconOther' | translate}}</td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    -->
+                </table>
+            </section>
+            <section>
+                <div class="work-area">
+                    <button class="circle-bt" (click)="doBack()">
+                        <span class="return-bt"></span>
+                        <span class="text-bt">{{'btnBack' | translate}}</span>
+                    </button>
+                </div>
+            </section>
+            <app-banner [bottomMargin]="true"></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

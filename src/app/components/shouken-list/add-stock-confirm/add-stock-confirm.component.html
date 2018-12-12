@@ -1,0 +1,19 @@
+<div class="popup-custom">
+    <div class="popup-title">保険証券をカメラ撮影します。</div>
+    <div class="popup-content">
+        <div class="img-content">
+            <img src="../../../../assets/img/start-img-popup.png" />
+        </div>
+        <div class="text-content">
+            <span class="text-red text-bold">１契約単位</span><br />
+            保険証券の保険内容登録は、１契約単位になりますので、ご注意ください。
+        </div>
+    </div>
+    <div class="popup-footer popup-footer-custom">
+        <button type="button" class="normal-bt btn-block" (click)="doSave()">OK</button>
+        <span class="checkbox-group">
+            <input id="chkFrank" name="name" checked type="checkbox" [ngModel]="ischeck" (ngModelChange)="handleCheckbox($event)"> <label class="check check-square" for="chkFrank"></label>
+            <label class="check-text" for="chkFrank">この画面を２度と表示しない</label>
+        </span>
+    </div>
+</div>

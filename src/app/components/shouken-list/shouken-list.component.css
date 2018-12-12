@@ -1,0 +1,144 @@
+.pc .work-area{
+    text-align: right;
+}
+.pc .work-area button{
+    width: 150px;
+}
+
+
+.tr-line-bottom {
+    height: 100px;
+}
+@media only screen and (max-width: 767px) {
+    .rotate90 {
+        max-width: 90px;
+        max-height: 90px;
+        transform: rotate(90deg);
+    }
+    .rotate180 {
+        max-width: 90px;
+        max-height: 90px;
+        transform: rotate(180deg);
+    }
+    .rotate270 {
+        max-width: 90px;
+        max-height: 90px;
+        transform: rotate(270deg);
+    }
+}
+
+.work-area {
+    text-align: center;
+}
+.work-area button{
+    width: 40%;
+    padding: 10px 5px;
+    border-radius: 5px;
+    color: #FFF;
+    font-weight: bold;
+}
+.work-area button:first-child{
+    margin-right: 10px;
+}
+.work-area button.btn-1{
+    background-color: #4CAF50;
+    border: 1px solid #4CAF50;
+    background-image: url(../../../assets/img/assurance-check.png);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    background-size: 25px;
+}
+.work-area button.btn-2{
+    background-color: #e29a2e;
+    border: 1px solid #e29a2e;
+    background-image: url(../../../assets/img/other.png);
+    background-repeat: no-repeat;
+    background-position: 10% 50%;
+    background-size: 25px;
+}
+.hidden{
+    display: none;
+}
+.popup-upload {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.288);
+    z-index: 999;
+}
+.popup-upload .popup-custom{
+    width: 80%;
+    float: left;
+    background: #fff;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    margin-top: 50px;
+    margin-left: 10%;
+}
+label.btn-block {
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 10px 0px 0px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 479px){
+
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px){
+    .work-area button{
+        max-width: 150px;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 959px){
+    .work-area button{
+        max-width: 150px;
+    }
+}
+
+@media only screen and (min-width: 960px) and (max-width: 1279px){
+    
+}
+
+@media only screen and (min-width: 1280px){
+    
+}
+
+@media only screen and (max-height: 415px){
+    .work-area {
+        position: unset;
+        margin-top: 10px;
+    }
+    .popup-upload .popup-custom{
+        margin-top: 10px;
+        width: 50%;
+        margin-left: 25%;
+        padding-top: 10px;
+        padding-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .work-area {
+        position: unset;
+        margin-top: 10px;
+        padding: 1vmin;
+        width: 100%;
+    }
+}
+
+.sp .work-area-back {
+    margin-top: 15px;
+}
+
+.pc .work-area-back {
+    margin-top: 15px;
+	padding: 1vmin;
+	width: 100%;
+}

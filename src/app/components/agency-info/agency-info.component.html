@@ -1,0 +1,65 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div id="tutorial">
+    <div class="contents">
+        <div class="inner">
+            <div class="box-inner">
+                <section>
+                    <div class="tutorial-img">
+                        <img src="assets/img/tutorial03.png" />
+                    </div>
+                    <table class="noborder-table input-table">
+                        <colgroup>
+                            <col width="40%">
+                            <col width="60%">
+                        </colgroup>
+                        <tr class="tr-line-bottom">
+                            <th class="list-title text-left">
+                                {{'title1' | translate}}
+                            </th>
+                            <td>
+                                {{agentInfo.AgentName}}
+                            </td>
+                        </tr>
+                        <tr class="tr-line-bottom">
+                            <th class="list-title text-left">
+                                {{'title2' | translate}}
+                            </th>
+                            <td>
+                                {{agentInfo.TantoName}}
+                            </td>
+                        </tr>
+                        <tr class="tr-line-bottom">
+                            <th class="list-title text-left">
+                                {{'title3' | translate}}
+                            </th>
+                            <td>
+                                {{agentInfo.Phone}}
+                            </td>
+                        </tr>
+                        <tr class="tr-line-bottom">
+                            <th class="list-title text-left">
+                                {{'title4' | translate}}
+                            </th>
+                            <td>
+                                {{agentInfo.KeiyakuPage}}
+                            </td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <div class="work-area work-area-setting">
+                        <button (click)="doBack()" class="circle-bt">
+                            <span class="cancel-bt"></span><span class="text-bt">{{'buttonCancel' | translate}}</span>
+                        </button>
+                        <div class="right-area">
+                            <button (click)="doEdit()" class="circle-bt">
+                                <span class="edit-bt"></span><span class="text-bt">{{'buttonEdit' | translate}}</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

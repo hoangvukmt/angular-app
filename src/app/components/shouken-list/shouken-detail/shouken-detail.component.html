@@ -1,0 +1,146 @@
+<app-header-cpn [headerTitle]="headerTitle"></app-header-cpn>
+<div class='sp' style="position: fixed; top: 10.5vmin; left: 0.5vmin; z-index: 8;">
+    <button type="button" class="circle-bt-zoom" (click)="zoomIn()">
+        <span class="zoomIn"></span>
+    </button>
+    <button type="button" class="circle-bt-zoom" (click)="zoomOut()">
+        <span class="zoomOut"></span>
+    </button>
+</div>
+<div class="contents" id="contents" (mouseup)="disableDrag()">
+    <div class="inner" id="inner" (window:resize)="onResize($event)">
+        <div class="pc header-edit">
+            <div style="float: left; position: relative; height: 100%; width: 100%;">
+                <div style="position: absolute;">
+                    <button class="btnZoom" (click)="close()">
+                        <i class="icon fas fa-chevron-left"></i>
+                        <span class="display-text">戻る</span>
+                    </button>
+                    <button class="btnZoom" style="margin-left: 10px" (click)="zoomIn()">
+                        <i class="icon fas fa-plus"></i>
+                        <span class="display-text"> 拡大</span>
+                    </button>
+                    <button class="btnZoom" (click)="zoomOut()">
+                        <i class="icon fas fa-minus"></i> 
+                        <span class="display-text">縮小</span>
+                    </button>
+                </div>
+                <button *ngIf="enableAccept" class="btnZoom" style="float: right" (click)="doComplate()">
+                    <i class="icon fas fa-check"></i> 
+                    <span class="display-text">完了</span>
+                </button>
+                <span style="line-height: 40px;">
+                    <button class="btnEdit" *ngIf="enableGoToRotate" (click)="goToRotate()">
+                        <i class="icon fas fa-undo"></i>
+                        <span class="display-text"> 回転</span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableGoToCrop" (click)="goToCrop()">
+                        <i class="icon fas fa-crop-alt"></i>
+                        <span class="display-text"> トリミング</span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableGoToMasking" (click)="goToMasking()">
+                        <i class="icon fas fa-pencil-alt"></i>
+                        <span class="display-text"> マスキング </span>
+                    </button>
+
+                    <button class="btnEdit" *ngIf="enableRotate" (click)="rotateLeftImage()">
+                        <i class="icon fas fa-undo"></i>
+                        <span class="display-text"> 左回転 </span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableRotate" (click)="rotateRightImage()">
+                        <i class="icon fas fa-redo"></i>
+                        <span class="display-text"> 右回転 </span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableMasking" (click)="drawMasking()">
+                        <i class="icon fas fa-plus"></i>
+                        <span class="display-text"> 追加 </span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableMasking" (click)="removeMasking()">
+                        <i class="icon fas fa-reply"></i>
+                        <span class="display-text"> 戻す</span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableMasking" (click)="acceptMasking()">
+                        <i class="icon-ok fas fa-check"></i>
+                        <span class="display-text"> 決定</span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableCrop" (click)="acceptCrop()">
+                        <i class="icon-ok fas fa-check"></i>
+                        <span class="display-text"> 決定</span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableRotate" (click)="acceptRotate()">
+                        <i class="icon-ok fas fa-check"></i>
+                        <span class="display-text"> 決定</span>
+                    </button>
+                    <button class="btnEdit" *ngIf="enableBackToImage" (click)="backToImage()">
+                        <i class="icon-ng fas fa-times"></i>
+                        <span class="display-text"> 取消</span>
+                    </button>
+                </span>
+            </div>
+        </div>
+        <div>
+            <div class="image-editor-inner" id="image-editor-inner" (window:resize)="onResize($event)" (mouseup)="disableDrag()">
+                <div [style.height.px]="divSize" class="div-canvas">
+                    <div style="margin: auto" id="container-editor">
+                        <canvas #canvasEl 
+                            width=600 
+                            height=600 
+                            id="vnext-editor" 
+                            (mousedown)="myDown($event)" 
+                            (mouseup)="myUp($event)" 
+                            (mousemove)="myMove($event)"
+                            (touchstart)="myDown($event)" 
+                            (touchend)="myUp($event)" 
+                            (touchmove)="myMove($event)"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sp" style="margin-bottom: 30px">
+            <button *ngIf="enableBackToList" class="circle-bt2" style="float: left; margin-left: 10px" (click)="close()">
+                <span class="return-bt"></span>
+                <span class="text-bt">戻る</span>
+            </button>
+            <button *ngIf="enableBackToImage" type="button" class="circle-bt" style="float: left; margin-left: 10px" (click)="backToImage()">
+                <span class="button-back"></span>
+            </button>
+            <div style="float: right">
+                <button *ngIf="enableGoToRotate" type="button" class="circle-bt" (click)="goToRotate()">
+                    <span class="rotate-right"></span>
+                </button>
+                <button *ngIf="enableGoToCrop" type="button" class="circle-bt" (click)="goToCrop()">
+                    <span class="edit-image"></span>
+                </button>
+                <button *ngIf="enableGoToMasking" type="button" class="circle-bt" (click)="goToMasking()">
+                    <span class="masking"></span>
+                </button>
+                <button *ngIf="enableRotate" type="button" class="circle-bt" (click)="rotateLeftImage()">
+                    <span class="rotate-left"></span>
+                </button>
+                <button *ngIf="enableRotate" type="button" class="circle-bt" (click)="rotateRightImage()">
+                    <span class="rotate-right"></span>
+                </button>
+                <button *ngIf="enableMasking" type="button" class="circle-bt" (click)="removeMasking()">
+                    <span class="remove"></span>
+                </button>
+                <button *ngIf="enableMasking" type="button" class="circle-bt" (click)="drawMasking()">
+                    <span class="masking"></span>
+                </button>
+                <button *ngIf="enableRotate" type="button" class="circle-bt" (click)="acceptRotate()">
+                    <span class="done-btn"></span>
+                </button>
+                <button *ngIf="enableCrop" type="button" class="circle-bt" (click)="acceptCrop()">
+                    <span class="done-btn"></span>
+                </button>
+                <button *ngIf="enableMasking" type="button" class="circle-bt" (click)="acceptMasking()">
+                    <span class="done-btn"></span>
+                </button>
+                <button *ngIf="enableAccept" type="button" class="circle-bt" (click)="acceptEdit()">
+                    <span class="done-btn"></span>
+                </button>
+            </div>
+        </div>
+        <app-banner></app-banner>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>

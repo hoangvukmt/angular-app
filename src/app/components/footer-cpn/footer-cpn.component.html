@@ -1,0 +1,25 @@
+<footer>
+    <div id="footermenu">
+        <ul>
+            <li (click)="goUrl('home')">ホーム</li>
+            <li (click)="goUrl('personalInfoSetting')">ご本人設定</li>
+            <!-- <li><a href="/{{ROUTER_URL.messageSend}}">保険に関するお問い合わせ</a></li> -->
+        </ul>
+        <ul>
+            <li (click)="goUrl('insuranceContract')">保険証券</li>
+            <li (click)="goUrl('familyInfoSetting')">家族追加</li>
+        </ul>
+        <ul>
+            <li (click)="goUrl('messageList')">お知らせ</li>
+            <li (click)="goUrl('agencyList')">代理店設定</li>
+        </ul>
+        <ul>
+            <li (click)="goUrl('setting')">設定</li>
+            <li (click)="goUrl('messageSend')">お問い合わせ</li>
+        </ul>
+    </div>
+    <!--/footermenu-->
+    <div id="copyright">
+        <small>Copyright © 株式会社アイリックコーポレーション All rights reserved.</small>
+    </div>
+</footer>

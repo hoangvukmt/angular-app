@@ -1,0 +1,284 @@
+<app-header-cpn [headerTitle]="headerTitle" [name]="name" [currentRelation]="currentRelation"></app-header-cpn>
+<div id="top">
+    <div class="contents">
+        <div class="inner">
+            <section>
+                <app-payment-box *ngIf="listFamily.length>0"
+                                [(person)]="person"
+                                [(currentRelation)]="currentRelation"
+                                (changeRelation)="listenChangeRelation($event)"
+                                [listFamily]="listFamily"
+                                [mpm]="mpm"
+                                [mpy]="mpy"></app-payment-box>
+            </section>
+            <section>
+                <div class="tool">
+                    <i class="fas fa-grip-horizontal" (click)="swicthLayout('grid')" [class.active]="layout === 'grid'"></i>
+                    <i class="fas fa-list" (click)="swicthLayout('list')" [class.active]="layout === 'list'"></i>
+                </div>
+            </section>
+            <section *ngIf="layout === 'grid'">
+                <div class="list" [class.pc-no-padding]="objListCategory.all.length>0" (click)="goToContract('all', 0)">
+                    <div [class.bg-yellow]="objListCategory.all.length > 0">
+                        <span *ngIf="objListCategory.all.length>0" class="red-cirle-alert">{{objListCategory.all.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/all.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconAll' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            {{'detailIconAll1' | translate}}<br>
+                            {{'detailIconAll2' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="list" [class.pc-no-padding]="objListCategory.life.length>0" (click)="goToContract('life',1)">
+                    <div [class.bg-yellow]="objListCategory.life.length>0">
+                        <span *ngIf="objListCategory.life.length>0" class="red-cirle-alert">{{objListCategory.life.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/life.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconLife' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            {{'detailIconLife' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="list" [class.pc-no-padding]="objListCategory.injure.length>0" (click)="goToContract('injure',2)">
+                    <div [class.bg-yellow]="objListCategory.injure.length>0">
+                        <span *ngIf="objListCategory.injure.length>0" class="red-cirle-alert">{{objListCategory.injure.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/medical.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconMedical1' | translate}}<br>
+                                {{'titleIconMedical2' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            {{'detailIconMedical' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="list" [class.pc-no-padding]="objListCategory.saving.length>0" (click)="goToContract('saving',3)">
+                    <div [class.bg-yellow]="objListCategory.saving.length>0">
+                        <span *ngIf="objListCategory.saving.length>0" class="red-cirle-alert">{{objListCategory.saving.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/savings.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconSaving1' | translate}}<br>
+                                {{'titleIconSaving2' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            {{'detailIconSaving' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="list" [class.pc-no-padding]="objListCategory.car.length>0" (click)="goToContract('car',4)">
+                    <div [class.bg-yellow]="objListCategory.car.length>0">
+                        <span *ngIf="objListCategory.car.length>0" class="red-cirle-alert">{{objListCategory.car.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/car.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconCar' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            {{'detailIconCar' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="list" [class.pc-no-padding]="objListCategory.house.length>0" (click)="goToContract('house',5)">
+                    <div [class.bg-yellow]="objListCategory.house.length>0">
+                        <span *ngIf="objListCategory.house.length>0" class="red-cirle-alert">{{objListCategory.house.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/house.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconHouse' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            {{'detailIconHouse1' | translate}}<br />
+                            {{'detailIconHouse2' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="list" [class.pc-no-padding]="objListCategory.leisure.length>0" (click)="goToContract('leisure',6)">
+                    <div [class.bg-yellow]="objListCategory.leisure.length>0">
+                        <span *ngIf="objListCategory.leisure.length>0" class="red-cirle-alert">{{objListCategory.leisure.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/other.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconSun1' | translate}}<br />
+                                {{'titleIconSun2' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            {{'detailIconSun1' | translate}}<br />
+                            {{'detailIconSun2' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <!--
+                <div class="list" [class.pc-no-padding]="objListCategory.travel.length>0" (click)="goToContract('travel',7)">
+                    <div [class.bg-yellow]="objListCategory.travel.length>0">
+                        <span *ngIf="objListCategory.travel.length>0" class="red-cirle-alert">{{objListCategory.travel.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/airplane.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconAirplane' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            <span>
+                                {{'detailIconAirplane1' | translate}}
+                                <br />
+                                {{'detailIconAirplane2' | translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="list" [class.pc-no-padding]="objListCategory.other.length>0" (click)="goToContract('other',8)">
+                    <div [class.bg-yellow]="objListCategory.other.length>0">
+                        <span *ngIf="objListCategory.other.length>0" class="red-cirle-alert">{{objListCategory.other.length}}</span>
+                        <div class="img-box"><img alt="" class="img" src="assets/img/other.png"></div>
+                        <div class="icons-title-box">
+                            <div class="icons-title">
+                                {{'titleIconOther' | translate}}
+                            </div>
+                        </div>
+                        <div class="icons-description">
+                            {{'detailIconOther1' | translate}}<br />
+                            {{'detailIconOther2' | translate}}
+                        </div>
+                    </div>
+                </div>
+                -->
+            </section>
+            <section *ngIf="layout === 'list'">
+                <table class="configuration-table input-table">
+                    <colgroup>
+                        <col width="10%">
+                        <col width="80%">
+                        <col width="10%">
+                    </colgroup>
+                    <tr (click)="goToContract('all',0)">
+                        <td>
+                            <span class="configuration-bt terms-service icon-all"></span>
+                        </td>
+                        <td>
+                            {{'titleIconAll' | translate}}
+                            <span *ngIf="objListCategory.all.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.all.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goToContract('life',1)">
+                        <td>
+                            <span class="configuration-bt terms-service icon-heart"></span>
+                        </td>
+                        <td>
+                            {{'titleIconLife' | translate}}
+                            <span *ngIf="objListCategory.life.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.life.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goToContract('injure',2)">
+                        <td>
+                            <span class="configuration-bt terms-service icon-medical"></span>
+                        </td>
+                        <td>
+                            {{'titleIconMedical1' | translate}}{{'titleIconMedical2' | translate}}
+                            <span *ngIf="objListCategory.injure.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.injure.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goToContract('saving',3)">
+                        <td>
+                            <span class="configuration-bt license icon-fig"></span>
+                        </td>
+                        <td>
+                            {{'titleIconSaving1' | translate}}{{'titleIconSaving2' | translate}}
+                            <span *ngIf="objListCategory.saving.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.saving.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goToContract('car',4)">
+                        <td>
+                            <span class="configuration-bt tutorial icon-car"></span>
+                        </td>
+                        <td>
+                            {{'titleIconCar' | translate}}
+                            <span *ngIf="objListCategory.car.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.car.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goToContract('house',5)">
+                        <td>
+                            <span class="configuration-bt version ison-house"></span>
+                        </td>
+                        <td>
+                            {{'titleIconHouse' | translate}}
+                            <span *ngIf="objListCategory.house.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.house.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goToContract('leisure',6)">
+                        <td>
+                            <span class="configuration-bt version icon-other"></span>
+                        </td>
+                        <td>
+                            {{'titleIconSun1' | translate}}{{'titleIconSun2' | translate}}
+                            <span *ngIf="objListCategory.leisure.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.leisure.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <!--
+                    <tr (click)="goToContract('travel',7)">
+                        <td>
+                            <span class="configuration-bt version icon-travel"></span>
+                        </td>
+                        <td>
+                            {{'titleIconAirplane' | translate}}
+                            <span *ngIf="objListCategory.travel.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.travel.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    <tr (click)="goToContract('other',8)">
+                        <td>
+                            <span class="configuration-bt version icon-other"></span>
+                        </td>
+                        <td>
+                            {{'titleIconOther' | translate}}
+                            <span *ngIf="objListCategory.other.length>0" class="red-cirle-alert" style="float: right;">{{objListCategory.other.length}}</span>
+                        </td>
+                        <td class="right">
+                            <span class="arrow"></span>
+                        </td>
+                    </tr>
+                    -->
+                </table>
+            </section>
+            <app-banner></app-banner>
+        </div>
+    </div>
+</div>
+<app-footer-cpn></app-footer-cpn>
